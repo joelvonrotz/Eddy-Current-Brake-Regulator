@@ -1,0 +1,24 @@
+\begin{figure}[ht]
+  \begin{center}
+    \begin{tikzpicture}
+      \node[labelbox]     (mess)                                          {Messen};
+      \node[labelbox]     (verg)  [below right= 3cm and 0.5cm of mess]    {Vergleichen};
+      \node[labelbox]     (stel)  [below left = 3cm and 0.5cm of mess]    {Stellen};
+
+      \node[emptynode]    (nod0)  [below right= 0.2cm and 0.2cm of mess]  {};
+      \node[emptynode]    (nod1)  [above      = 0.2cm of verg]            {};
+      \node[emptynode]    (nod2)  [      left = 0.2cm of verg]            {};
+      \node[emptynode]    (nod3)  [      right= 0.2cm of stel]            {};
+      \node[emptynode]    (nod4)  [above      = 0.2cm of stel]            {};
+      \node[emptynode]    (nod5)  [below left = 0.2cm and 0.2cm of mess]  {};
+
+      \draw [arrow_right] (nod0) -- (nod1);
+      \draw [arrow_right] (nod2) -- (nod3);
+      \draw [arrow_right] (nod4) -- (nod5);
+
+    \end{tikzpicture}
+  \end{center}
+  \vspace{-3ex}
+  \caption{Regler Blockdiagramm}
+  \label{fig:regulator_circulation}
+\end{figure}

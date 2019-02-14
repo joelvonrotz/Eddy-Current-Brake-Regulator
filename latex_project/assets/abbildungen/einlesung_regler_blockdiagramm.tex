@@ -1,0 +1,30 @@
+\begin{figure}[ht]
+  \begin{center}
+    \begin{tikzpicture}
+      \node[emptynode]    (soll)                                {};
+      \node[round]        (diff)        [right=1cm of soll]     {};
+      \node[labelbox]     (regl)        [right=1cm of diff]     {Regler};
+      \node[labelbox]     (akto)        [right=1cm of regl]     {Aktor};
+      \node[labelbox]     (sens)        [below=1cm of akto]     {Sensor};
+      \node[labelbox]     (stre)        [right=1cm of akto]     {Regelstrecke};
+      \node[emptynode]    (gone)        [right=2cm of stre]     {};
+      \node[emptynode]    (erro)        [above=1cm of stre]     {z};
+      \node[emptynode]    (minus_diff)  [below right = -1mm and -1mm of diff] {$-$};
+      %\node[emptynode]    (plus_diff)   [above left  = -1mm and -1mm of diff] {$+$};
+      \node[spot]         (midl)        [right=1cm of stre]     {};
+
+
+      \draw [arrow_right] (soll)      -- node[above left = 0cm and 1mm]   {$w$} (diff);
+      \draw [arrow_right] (diff)      -- node[above left = 0cm and -1mm]  {$e$} (regl);
+      \draw [arrow_right] (regl)      -- node[above]                      {$m$} (akto);
+      \draw [arrow_right] (akto)      -- node[above]                      {$y$} (stre);
+      \draw [-]           (stre)      -- node[above left]                 {$x$} (gone);
+      \draw [arrow_right] (midl.center) |-                                      (sens.east);
+      \draw [arrow_right] (sens.west) -| node[above left  = 1cm and 0cm]  {$r$} (diff.south);
+      \draw [arrow_right] (erro)      --                                            (stre);
+    \end{tikzpicture}
+  \end{center}
+  \vspace{-3ex}
+  \caption{Regler Blockdiagramm}
+  \label{fig:regulator_block}
+\end{figure}

@@ -1,0 +1,18 @@
+\begin{figure}[ht]
+    \begin{center}
+      \begin{tikzpicture}
+        \node[labelbox]     (mcu)                                           {MCU};
+        \node[labelbox]     (fet)  [right= 2cm of mcu]    {MOSFET};
+        \node[labelbox]     (usb)   [above = 2cm of mcu]    {USB};
+        \node[emptynode]    (sens)  [left=2cm of mcu]  {Sensor};
+  
+        \draw [arrow_right] (sens) -- (mcu);
+        \draw [arrow_right] (mcu) -- (fet);
+        \draw [arrow_right] (mcu) -- (usb);
+  
+      \end{tikzpicture}
+    \end{center}
+    \vspace{-3ex}
+    \caption{Schaltung Blockdiagramm}
+    \label{fig:electronic_block}
+  \end{figure}

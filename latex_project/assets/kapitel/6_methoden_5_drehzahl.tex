@@ -1,0 +1,59 @@
+\subsection{Drehzahlmessung} \label{cap:methoden_drehzahlmessung}
+Mit der Drehzahlmessung wurde die Genauigkeit der Elektronik gemessen. Diese Genauigkeit wurde mit dem Drehzahlmessgerät überprüft. Da das Messgerät in der Industrie verwendet wird, ist die Messtoleranz sehr klein, führt also zu einem genauen Resultat.
+\newpara
+Die Drehzahl ist der Kehrwert von der Zeit, welche für eine Umdrehung benötigt wird (Siehe Formel \ref{equ:drehzahl}). Sie gibt an, wie viele Umdrehungen in einer Sekunde gemacht werden können.
+
+\begin{equation}
+    \label{equ:drehzahl}
+    n=\frac{1}{t} \tag{20}
+  \end{equation}
+  \begin{gather}
+  \shortintertext{\textbf{Begriffe:}}
+  \begin{tabularx}{0.9\textwidth}{ll}
+    $n$  & Drehzahl\\
+    $t$  & Zeit für eine Umdrehung\\
+  \end{tabularx}\nonumber
+\end{gather}
+(\cite[S.86]{kuchling2014taschenbuch})
+\newpara
+Die Zeit wird mit einem digitalen Timer gemessen, was aber zu einer Einschränkung führt. Diese Einschränkung ist die Speichergrösse des Timers, da dieser begrenzt ist. Das heisst, dass der Timer nur für eine bestimmte Zeit laufen kann, bis dieser sich wieder zurücksetzt. Wenn aber der Timer als eine Art Metronom rekonfiguriert wird, kann ein Intervall mit einem konstanten Rhythmus produziert werden (Siehe Abbildung \ref{fig:plot_timer_verlauf}). 
+\newpara
+\input{assets/diagramm/timer_verlauf.tex}
+
+Nun werden die Intervalle bei einer Umdrehung des Rades gezählt. Man weiss nun anhand der Anzahl Intervallen und des Zählerstandes des Timers, wie lange eine Umdrehung dauert (Siehe Abbildung \ref{equ:zeit_drehzahl}).
+
+\begin{equation}
+    \label{equ:zeit_drehzahl}
+    t=x_{Z\ddot{a}hler}\cdot t_{Timer}+x_{Intervalle}\cdot t_{Intervalle} \tag{21}
+  \end{equation}
+  \begin{gather}
+  \shortintertext{\textbf{Begriffe:}}
+  \begin{tabularx}{0.9\textwidth}{ll}
+    $x_{Z\ddot{a}hler}$	     & Zählerstand des Timers (dient für ein genaueres Resultat) \\
+    $x_{Intervalle}$	 & Anzahl Intervalle pro Umdrehung \\
+    $t_{Timer}$	     & Dauer zwischen zwei Inkrements \textrightarrow 16us \\
+    $t_{Intervalle}$	 & Dauer eines Intervalls \textrightarrow $\approx$ 25ms     \\
+  \end{tabularx}\nonumber
+\end{gather}
+
+Das folgende Diagramm (Siehe Abbildung \ref{fig:plot_timer_magnetschalter_impuls}) zeigt das Verhalten des Timers. Die untere Linie ist der Timer und die obere Linie der Magnetschalter des Rades. Im Verlaufe der Zeit werden mehrere Intervalle gezählt, bis der Magnetschalter einen Impuls erzeugt. Der Timer wird in seinem aktuellen Zustand wieder zurückgesetzt und fängt erneut an zu zählen, bis wieder ein Impuls passiert. Gleichzeitig wird der Zählstand kopiert und abgespeichert, damit dieser vom Mikrocontroller verarbeitet werden konnte.
+\newpara
+\input{assets/diagramm/timer_durchlauf.tex}
+\newpage
+
+\subsubsection{Messungsaufbau}
+Damit bewiesen werden kann, dass die Messung übereinstimmt, muss die Zeit anhand einem Messungsaufbau gemessen und verglichen werden. Dazu wurde das bereits erwähnte Drehzahlmessungsgerät, eine Kamera und ein Laptop verwendet. Mit der Kamera wurde das Display des Drehzahlmessungsgerät aufgenommen, da das Messgerät kein Logger besitzt. Mit dem Laptop wurden die Resultate der Elektronik, welche über USB gesendet wurden, aufgezeichnet.
+\newpara
+Im Kapitel \ref{cap:methoden_datenauswertung} wird erklärt, wie die Aufnahmen verarbeitet und ausgewertet werden. Wichtig bei dieser Messung ist das Verhältnis des Messgerätes und der Elektronik. Anhand des Verhältnisses ist es möglich, herauszufinden, wie genau die Elektronik im Vergleich zum Messgerät ist. Das Verhältnis wird mit folgender Formel berechnet (Siehe Formel \ref{equ:verhaltnis}).
+
+\begin{equation}
+    \label{equ:verhaltnis}
+    Verh\ddot{a}ltnis=\frac{n_{Elek}}{n_{Mess}} \tag{22}
+  \end{equation}
+  \begin{gather}
+  \shortintertext{\textbf{Begriffe:}}
+  \begin{tabularx}{0.9\textwidth}{ll}
+    $n_{Elek}$	     & Drehzahl der Elektronik\\
+    $n_{Mess}$	 & Drehzahl des Messgerätes \\
+  \end{tabularx}\nonumber
+\end{gather}

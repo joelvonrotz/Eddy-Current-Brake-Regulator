@@ -1,0 +1,31 @@
+\begin{figure}[h]
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[
+        axis_regulator_style,
+               %title         = P-Regler mit konstanter Abweichung,
+               ylabel         = {},
+        ylabel near ticks, 
+        yticklabel pos        = left,
+        minor      grid style = {dashed,gray},
+                   ymax       = 4,
+                   ymin       = -0.5,
+                   xmax       = 110,
+                   xlabel     = {t},
+                   xticklabels    = {,,},
+        legend     style      = {draw=none}
+      ]
+      
+        \addplot[line_red] table[x= time,y= e,col sep=comma,mark=none]{assets/diagramm/pi_regler_nf.csv}; 
+        \addlegendentry{Abweichung}
+      
+        \addplot[line_blue] table[x= time,y=pi,col sep=comma,mark=none]{assets/diagramm/pi_regler_nf.csv}; 
+        \addlegendentry{P + I}
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \vspace{-3ex}
+  
+  \caption{PI-Regler mit konstanter Abweichung}
+  \label{fig:plot_pi_regulator_no_feedback}
+\end{figure}

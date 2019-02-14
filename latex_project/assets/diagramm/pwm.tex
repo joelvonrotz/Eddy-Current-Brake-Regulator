@@ -1,0 +1,34 @@
+\begin{figure}[h]
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[
+        axis_regulator_style,
+               %title         = P-Regler mit konstanter Abweichung,
+               ylabel         = {Spannung},
+               y unit         = {V},
+        ylabel near ticks, 
+        yticklabel pos        = left,
+        minor      grid style = {dashed,gray},
+                   ymax       = 2,
+                   ymin       = 0,
+                   xmax       = 20,
+                   xlabel     = {t},
+                   xticklabels    = {,,},
+        legend     style      = {draw=none}
+      ]
+      
+        \addplot[line_red] table[x=time,y=value,col sep=comma,mark=none]{assets/diagramm/pwm.csv};
+        \addlegendentry{PWM-Verlauf}
+      \end{axis}
+      \draw[<->](0.37,2) -- node[above]{Pause} (2.88,2);
+      \draw[<->](2.90,2) -- node[right =0.3cm]{Impuls} (3.60,2);
+      \draw[-](0.37,3) -- (0.37,4);
+      \draw[-](3.62,3) -- (3.62,4);
+      \draw[<->](0.37,3.8) -- node[above]{Periode} (3.62,3.8);
+    \end{tikzpicture}
+  \end{center}
+  \vspace{-3ex}
+  
+  \caption{PWM Darstellung}
+  \label{fig:plot_pwm}
+\end{figure}

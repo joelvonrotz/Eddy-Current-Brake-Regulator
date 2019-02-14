@@ -1,0 +1,9 @@
+\subsection{Schlussfolgerung}
+Der aktuelle Stand der Wirbelstrombremse kann die Geschwindigkeit des Rades messen und die Bremsung selbst ausführen. Es wurde erkannt, dass die Masse, welche an der Bremsscheibe befestigt ist, die Bremsung stark beeinflusst. Die Dimensionierung des Magneten kann anhand W.R. Smythes Formel (Formel \ref{equ:smythe_orignal}) und dem Trägheitsdrehmoment berechnet werden.
+\newpara
+Anhand diesen Erkenntnissen können mit folgenden Schritten weiter gearbeitet werden:
+\begin{itemize}
+  \item \textbf{Neue Hardware} - Die Elektronik muss neu designt werden, da die aktuelle Elektronik das Magnet nicht richtig ansteuern kann, weil der Regler nicht richtig funktioniert. Annahme ist, dass der Mikrocontroller zu langsam oder die Berechnungen nicht richtig ausführen kann. Ebenfalls muss der MOSFET ersetzt werden, da nach Austesten der Scheibe mit einer Stromstärke von 4A die Strombegrenzung des MOSFETs überschreitet.
+  \item \textbf{Neuer Aufbau} - Insbesondere muss das Rad des Fitnesstrainers durch eine Aluminiumscheibe ersetzt werden. Das Gewicht des Rades hat die Brems zu stark belastet (das Gewicht wurde nicht einberechnet).
+  \item \textbf{Besserer Messungsaufbau} - Der Messungsaufbau muss durch bessere Messgeräte ersetzt werden, welche ein Logging-System besitzen. Ein Logging-System ist ein System, welches Daten in bestimmten Intervallen abspeichert, welche man danach digital ablesen kann.
+\end{itemize}

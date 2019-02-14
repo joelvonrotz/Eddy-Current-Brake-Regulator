@@ -1,0 +1,134 @@
+\subsection{Regler} \label{cap:einlesung_regler}
+Regeln ist ein Vorgang, bei dem die Ausgangsgrösse, eine physikalische Grösse wie zum Beispiel die Drehzahl eines Rades, konstant überwacht und bei Abweichungen von einem Sollwert durch die Stellgrösse korrigiert wird (\cite{regelungstechnik}). Die Regelungstechnik ist sehr nützlich für Funktionen, welche einen Zustand konstant behalten müssen, wie zum Beispiel eine Heizung, die 25°C konstant heizen muss. Verändert sich die Temperatur zu 23°C, muss die Heizung das Heizelement erhitzen, um wieder auf 25°C zu kommen. Ist die Temperatur 27°C, muss die Heizung das Heizelement abkühlen lassen.
+
+\input{assets/abbildungen/einlesung_regler_kreislauf}
+
+Die Funktion des Reglers kann in drei Funktionsblöcke eingeteilt werden, welche miteinander interagieren: \textbf{Messen}, \textbf{Vergleichen} und \textbf{Stellen} (Siehe Abbildung \ref{fig:regulator_circulation}). Im Funktionsblock  \textit{Messen} übersetzt ein Sensor die physikalische Grösse in ein Format, welches die Elektronik verstehen kann. Unter \textit{Verstehen} gilt das Umwandeln und Bereitstellen brauchbarer Informationen, wie zum Beispiel die Umwandlung einer Umdrehung eines Rades zu der Zeit, welche dafür benötigt wurde. Im Block \textit{Vergleichen} wird der gemessene Wert mit dem Sollwert verglichen (Siehe Formel \ref{equ:regulator_error}). Die Differenz wird die Regeldifferenz oder auch Regelabweichung, welche im Regler verarbeitet wird. Daraus entsteht die Regelausgangsgrösse, welche in den Aktor geführt wird. Schlussendlich wird im Block \textit{Stellen} aus der Ausgangsgrösse die Stellgrösse mit dem Aktor bestimmt, was zur Veränderung der physikalischen Grösse führt. Durch die Veränderung wird wieder ein neuer Wert gemessen und der gesamte Prozess beginnt von vorne (Siehe Abbildung \ref{fig:regulator_block})(\cite{regelungstechnik}).
+\newpage
+\begin{equation}
+  \label{equ:regulator_error}
+  e = w-r
+\end{equation}
+\begin{gather}
+  \shortintertext{\textbf{Begriffe:}}
+  \begin{tabularx}{0.9\textwidth}{ll}
+    $w$ & Sollwert\\
+    $r$ & Istwert\\
+    $e$ & Regelabweichung, Regeldifferenz
+  \end{tabularx}\nonumber
+\end{gather}
+
+\input{assets/abbildungen/einlesung_regler_blockdiagramm}
+\begin{gather}
+  \shortintertext{\textbf{Begriffe:}}
+  \begin{tabularx}{.9\textwidth}{cl}
+      $w$ & Sollwert\\
+      $r$ & Istwert\\
+      $e$ & Regelabweichung, Regeldifferenz\\
+      $m$ & Regelausgangsgrösse (Befehl von Regler)\\
+      $y$ & Stellgrösse (bewirkt eine Änderung der Regelgrösse)\\
+      $x$ & Regelgrösse (physikalische Grösse \textrightarrow km/h, rpm, °C, etc.)\\
+      $z$ & Störgrösse (beeinflusst die Regelgrösse \textrightarrow °C, von aussen wirkende Kraft)
+  \end{tabularx}\nonumber
+\end{gather}
+
+\subsubsection{PID-Regler} \label{cap:information_pid_regulator}
+In der Wirbelstrombremse war ein PID-Regler geplant, welcher anhand von Geschwindigkeitsmessungen die Stärke des Magneten ansteuert. PID-Regler steht für \textbf{P}roportional-\textbf{I}ntegral-\textbf{D}ifferenzial-Regler und basiert auf mathematische Funktionen (\cite{schulmaterial_regler}).  
+\newpara
+Was genau diese Funktionen für einen Nutzen haben, wird in den folgenden vier Kapiteln erklärt.
+\newpage
+
+\subsubsection{Proportionalität}
+Der P-Anteil (Proportionalität) gilt als Hauptregler der drei Funktionen und berücksichtigt die Abweichung zwischen Istwert und Sollwert, in dieser Arbeit ist es die Differenz zwischen der gewünschten Maximalgeschwindigkeit und der aktuellen Geschwindigkeit. Diese Abweichung wird mit dem Faktor $K_P$ multipliziert (Siehe Formel \ref{equ:p_regulator_out}) (\cite{schulmaterial_regler}).
+
+\begin{equation}
+  \label{equ:p_regulator_out}
+  P_{OUT}=e\cdot K_P
+\end{equation}
+Der Faktor $K_P$ gibt an, wie stark der Regler bei Abweichungen reagieren soll. Je grösser der Faktor, desto stärker reagiert der Regler (\cite{schulmaterial_regler}). Dieser Faktor lässt dem System zu, das Rad bei Überschreitung der Maximalgeschwindigkeit abzubremsen. Der Nachteil daran ist, dass durch die Verkleinerung der Abweichung auch der P-Anteil kleiner wird, was heisst, dass das Rad nie genau auf die Maximalgeschwindigkeit gebremst werden kann. 
+\newpara
+Folgende Abbildung (Abbildung \ref{fig:plot_p_regulator_no_feedback}) stellt die Proportionalität bei einer konstanten Abweichung grob dar.
+
+\input{assets/diagramm/p_regler_nf.tex}
+
+Abbildung \ref{fig:plot_p_regulator_controlled} stellt nun die Proportionalität mit einer sich anpassenden Abweichung dar. In dieser Art würde man es in realen Experimenten sehen. Es kann nun der Nachteil der Proportionalität erkannt werden. In diesem Fall ist der $K_P$ Faktor = 0.5, also 50\% der Abweichung, was dazu führt, dass die Abweichung nie den Wert 0 erreichen wird, sondern sehr nahe an 0 kommen wird.
+
+\input{assets/diagramm/p_regler_gesteuert.tex}
+\newpara
+\begin{tcolorbox}
+  \textbf{\textit{Hinweis:}} Die Grösse der Proportionalität kann verschiedene Formate annehmen. In diesem Fall besitzt die Proportionalität kein Format sondern wird nur als eine simple Zahl dargestellt. Die Proportionalität wird im Nachhinein auf den Aktor angepasst. Dasselbe gilt für die Diagrammen des Integrals und des Differenzials.
+\end{tcolorbox}
+\newpara
+
+\subsubsection{Integral}
+Das Integral kann dieses Problem lösen. Wenn trotz Eingriff des P-Anteils immer noch eine Abweichung besteht, erhöht das Integral den P-Anteil bis die Geschwindigkeit der Maximalgeschwindigkeit entspricht. Dieser Anteil heisst I-Anteil und kann mit der Formel (\ref{equ:i_regulator_out}) dargestellt werden.
+
+\begin{equation}
+  \label{equ:i_regulator_out}
+  I_{OUT}=K_i\cdot \int_0^\infty{e(t)\cdot \Delta t}
+\end{equation}
+
+Der Faktor $K_i$ bestimmt, wie stark das System bei Abweichung reagieren kann. Da alle Abweichungen summiert werden, kann dieser Anteil sehr gross werden, was zu einer stärkeren Ausgangsgrösse führt. Die Abbildung \ref{fig:plot_i_regulator_no_feedback} stellt das Integral visuell dar, wobei die Auswirkung des Integrals bei konstanter Abweichung realisiert ist. Solange die Abweichung sich nicht ändert, wird der I-Anteil des Systems mit der Zeit stärker (\cite{schulmaterial_regler}).
+
+\input{assets/diagramm/i_regler_nf.tex}
+
+\newpage
+Wird der Integral mit der Proportionalität kombiniert, erhält man einen PI-Regler (Siehe Abbildung \ref{fig:plot_pi_regulator_no_feedback}). Dieser besitzt die Eigenschaften beider Regler: Ein System welches auf Abweichung reagiert und mit dem Integral die restliche Abweichung eliminiert.
+
+\input{assets/diagramm/pi_regler_nf.tex}
+
+Abbildung \ref{fig:plot_pi_regulator_controlled} zeigt den Regler mit gut dimensionierten Faktoren. Der Regler reagiert schnell auf eine Abweichung und glättet diese aus. Ein bis zwei Schwingungen sind in diesem Fall erlaubt.
+
+\input{assets/diagramm/pi_regler_gesteuert.tex}
+\newpara
+
+\newpage
+\subsubsection{Differenzial}
+Wird aber das Rad stark beschleunigt, entsteht eine grosse Änderung der Geschwindigkeit, was zu einer grossen Änderung der Abweichung in einer kurzen Zeit führt. Der P-Anteil und der I-Anteil sind zu träge zum Reagieren, dafür reagiert das Differenzial (D-Anteil) auf diese Änderung sehr schnell. Im Normalfall, also eine sehr kleine Abweichung, wird das System vom D-Anteil gering beeinträchtigt. Sobald bei der Abweichung eine grosse Änderung in einer kurzen Zeit entsteht, übernimmt der D-Anteil einen grossen Anteil der Regelung (\cite{schulmaterial_regler}).
+\newpara
+Die Abbildung \ref{fig:plot_d_regulator_no_feedback} stellt die Reaktion des Differenzials in Kombination mit der Proportionalität bei einer grossen Steigung dar.
+
+\input{assets/diagramm/d_regler_nf.tex}
+
+Die mathematische Funktion des Differenzials basiert auf der Änderung zwischen der aktuellen Geschwindigkeit und der vorherigen Geschwindigkeit innerhalb einer vergangenen Zeit ($\Delta t$), also der Steigung (Siehe Formel \ref{equ:d_regulator_out}) Je grösser die Änderung ist, desto grösser ist die Steigung, was im Regler zur schnelleren Reaktion verwendet wird.
+
+\begin{equation}
+  \label{equ:d_regulator_out}
+  D_{OUT}= K_d\cdot \frac{e_t-e_{t-1}}{\Delta t}
+\end{equation}
+\begin{gather}
+  \shortintertext{\textbf{Begriffe:}}
+  \begin{tabularx}{0.9\textwidth}{ll}
+    $e_t$ & Abweichung ab Zeitpunkt t\\
+    $e_{t-1}$ & vorherige Abweichung ab Zeitpunkt t
+  \end{tabularx}\nonumber
+\end{gather}
+
+Wie in den vorherigen Funktionen, dient der Faktor, hier $K_d$, zur Bestimmung der Stärke des Differenzials.
+
+
+In Kombination mit der Proportionalität erhält man einen PD-Regler, welcher auf grosse Steigungen schnell reagieren kann. Abbildung \ref{fig:plot_pd_regulator_controlled} zeigt das Verhalten des PD-Reglers.
+
+\input{assets/diagramm/pd_regler_gesteuert.tex}
+
+\newpara
+
+\subsubsection{PID}
+Werden alle Funktionen zusammengeführt, erhält man einen sehr schnellen und genauen PID-Regler. Durch seine Eigenschaften kommt der PID-Regler in den meisten Anwendungen zum Einsatz. Das Zusammenführen basiert auf einer Addition (Siehe Formel \ref{equ:pid_regulator_out}). Die Wirbelstrombremse würde daher auch einen PID-Regler für die Geschwindigkeitsgrenze verwenden, da bei Überschreitung die Bremse möglichst schnell die Geschwindigkeit abbremsen müsste.
+
+\begin{equation}
+  \label{equ:pid_regulator_out}
+  out= K_d\cdot \frac{e_t-e_{t-1}}{\Delta t} + K_i\cdot \int_0^\infty{e(t)\cdot \Delta t} + e\cdot K_P
+\end{equation}
+
+Abbildung \ref{fig:plot_pid_regulator_no_feedback} zeigt einen PID-Regler bei konstanter Abweichung. Der Regler reagiert auf Veränderung und auf Abweichung in einer schnellen Zeit.
+
+\input{assets/diagramm/pid_regler_nf.tex}
+
+Abbildung \ref{fig:plot_pid_regulator_controlled} zeigt einen gut dimensionierten PID-Regler. Dieser Regler reagiert auf grosse Änderungen der Abweichung und auf Abweichungen selbst.
+
+\input{assets/diagramm/pid_regler_gesteuert.tex}
+
+Abbildung \ref{fig:plot_pid_regulator_out_of_control} zeigt einen schwingenden Regler, welche falsch dimensioniert wurde.
+
+\input{assets/diagramm/pid_regler_ausgesteuert.tex}

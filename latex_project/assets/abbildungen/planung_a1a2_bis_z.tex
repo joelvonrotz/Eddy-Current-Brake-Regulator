@@ -1,0 +1,21 @@
+\begin{figure}[ht]
+    \begin{center}
+      \begin{tikzpicture}
+        \node[emptynode]     (a1)                                        {$A_1$};
+        \node[emptynode]     (a2)   [below= 2cm of a1]                     {$A_2$};
+        \node[emptynode]     (z)    [below right= 0.9cm and 5cm of a1]                     {Z};
+        \node[emptynode]     (e1)   [right= 2cm of a1]                                  {};
+        \node[emptynode]     (e2)   [right= 2cm of a2]                     {};
+        \node[emptynode]     (e3)   [below right= 1cm and 3cm of a1]                     {};
+  
+        \draw [-] (a1) -- (e1.center);
+        \draw [-] (a2) -- (e2.center);
+        \draw [-] (e2.center) -- (e3.center);
+        \draw [-] (e1.center) -- (e3.center);
+        \draw [arrow_right] (e3.center) -- (z);
+      \end{tikzpicture}
+    \end{center}
+    \vspace{-3ex}
+    \caption{Parallele Vorgehensweise}
+    \label{fig:planung_a1a2_bis_z}
+  \end{figure}

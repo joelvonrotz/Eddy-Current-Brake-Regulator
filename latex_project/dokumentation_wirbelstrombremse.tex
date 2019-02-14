@@ -1,0 +1,172 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt]{article} % A4 paper size, default 11pt font size and oneside for equal margins
+\usepackage[bottom=2.54cm, left=2.54cm, right=2.54cm, top=2.54cm]{geometry}
+\usepackage[english,german]{babel}
+\usepackage[toc,numberedsection]{glossaries}
+\usepackage[style=alphabetic, citestyle=authoryear,date=iso, urldate=iso]{biblatex}
+\usepackage{titlesec}
+\usepackage[x11names]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{scalerel,stackengine,amsmath}
+\usepackage{textcomp}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{qrcode}
+\usepackage{tabularx}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\usepackage{dirtytalk}
+\usepackage{float}
+
+\batchmode
+
+\renewcommand*{\nameyeardelim}{\addcomma\space}
+\usetikzlibrary{positioning,fit,calc,arrows.meta,arrows}
+\usepgfplotslibrary{units}
+\newcommand\equalhat{\mathrel{\stackon[1.5pt]{=}{\stretchto{%
+    \scalerel*[\widthof{=}]{\wedge}{\rule{1ex}{3ex}}}{0.5ex}}}}
+
+\tikzset{
+  labelbox/.style={draw,thick,text width=2.5cm,minimum height=1cm,align=center},
+  round/.style={circle,draw,thin, minimum size=5mm},
+  emptynode/.style={draw=none},
+  arrow_right/.style={-{Latex[length=2mm]}},
+  spot/.style={draw,shape=circle,fill=black,inner sep=1.5pt, minimum size = 0.5mm}
+}
+
+\pgfplotsset{
+  compat=1.16,
+  axis_regulator_style/.style={
+    width=8.8cm,
+    axis x line=center,
+    axis y line=left,
+    xlabel style={right = 0cm and 0.1cm},
+    ylabel style={above left},
+    legend cell align={left}
+  },
+  axis_results_style/.style={
+    width=8.8cm,
+    axis x line=bottom,
+    axis y line=left,
+    legend cell align={left}
+  },
+  line_black/.style={
+    color=black!70,
+    line width= 1pt
+  },
+  line_blue/.style={
+    color=blue!70,
+    line width= 1pt
+  },
+  line_red/.style={
+    color=red!70,
+    line width= 1pt
+  }
+}
+
+
+
+\newcommand{\newpara}
+{
+  \vskip 0.5cm
+}
+\raggedbottom
+
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+
+% \usepackage{newtxtext}
+% \usepackage{amsmath}
+% \usepackage[mathrm=sym]{unicode-math}
+% \setmathfont{Fira Math}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+
+
+\makeglossaries
+\loadglsentries{assets/glossar.tex}
+\bibliography{literature_and_stuff}
+
+\begin{document} 
+\input{assets/titlepage.tex}
+\tableofcontents
+\vskip 2cm
+
+\input{assets/kapitel/1_vorwort.tex}
+
+\input{assets/kapitel/2_abstract.tex}
+\newpage
+
+\input{assets/kapitel/3_einleitung.tex}
+\newpage
+\section{Einlesung}\label{cap:einlesung}
+\input{assets/kapitel/4_einlesung_1_magnetismus.tex}
+\input{assets/kapitel/4_einlesung_2_physik.tex}
+\input{assets/kapitel/4_einlesung_3_regler.tex}
+\newpage
+\section{Material}\label{cap:material}
+\input{assets/kapitel/5_material_1_mechanik.tex}
+\input{assets/kapitel/5_material_2_magnet.tex}
+\input{assets/kapitel/5_material_3_elektronik.tex}
+
+\section{Methoden}\label{cap:methoden}
+\input{assets/kapitel/6_methoden_1_planung.tex}
+\newpage
+\input{assets/kapitel/6_methoden_2_magnet_design.tex}
+\input{assets/kapitel/6_methoden_3_leiterplatten.tex}
+\newpage
+\input{assets/kapitel/6_methoden_4_aufbau.tex}
+\input{assets/kapitel/6_methoden_5_drehzahl.tex}
+\input{assets/kapitel/6_methoden_6_magnetbremsung.tex}
+\newpage
+\input{assets/kapitel/6_methoden_7_radanpassung.tex}
+\newpage
+\input{assets/kapitel/6_methoden_8_datenauswertung.tex}
+\newpage
+\input{assets/kapitel/6_methoden_9_magnet_control.tex}
+\newpage
+\section{Ergebnisse}\label{cap:ergebnisse}
+\input{assets/kapitel/7_ergebnisse_1_drehzahlmessung.tex}
+\newpage
+\input{assets/kapitel/7_ergebnisse_2_magnetabbremsung.tex}
+\newpage
+\section{Diskussionen} \label{cap:diskussion}
+\input{assets/kapitel/8_diskussion_1_drehzahlmessung.tex}
+\input{assets/kapitel/8_diskussion_2_magnetabbremsung.tex}
+\newpage
+\input{assets/kapitel/8_diskussion_3_nichterreichung.tex}
+\input{assets/kapitel/8_diskussion_4_schlussfolgerung.tex}
+
+\section{Schlusswort} \label{cap:schlusswort}
+\input{assets/kapitel/9_schlusswort.tex}
+\newpage
+
+\input{assets/kapitel/10_abbildungsverzeichnis.tex}
+\newpage
+
+\input{assets/kapitel/11_glossar.tex}
+\newpage
+
+\input{assets/kapitel/12_literaturverzeichnis.tex}
+\newpage
+
+\section{Anhang}
+\input{assets/kapitel/13_anhang.tex}
+
+
+
+% https://www.latextemplates.com/template/formal-book-title-page - template
+
+
+

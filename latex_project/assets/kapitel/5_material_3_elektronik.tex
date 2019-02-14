@@ -1,0 +1,36 @@
+\subsection{Elektronik} \label{cap:material_electronics}
+Für die richtige Wahl der Komponenten mussten zuerst Voraussetzungen gesetzt werden. Die Voraussetzungen der Elektronik ist das Messen der Geschwindigkeit des Rades, die Regelung der Bremse und eine Möglichkeit die gemessenen Daten auslesen zu können. 
+
+\input{assets/abbildungen/material_elektronik_blockdiagramm.tex}
+
+Der Regler konnte daraus in drei Blöcken aufgeteilt werden: USB, Mikrocontroller und MOSFET. Mit dem USB war das Ziel, Daten auslesen zu können und den Sollwert zu setzen. Der Mikrocontroller würde als Sensor und Gehirn der Elektronik dienen und wäre für das Messen der Geschwindigkeit, die Ansteuerung des Magneten und das Berechnen der Regelung würde der Mikrocontroller zuständig. Der MOSFET dient als Schalter um den Magneten anzusteuern.
+\newpara
+In den folgenden Unterkapiteln werden die Auswahl und die Begründung der ausgewählten Komponenten aufgeführt.
+
+\subsubsection{Mikrocontroller}
+Die wichtigste Komponente ist der Mikrocontroller, welcher einen grossen Anteil an Arbeit übernehmen muss, welche das Messen und das Regeln beinhalten. Zum Messen der Geschwindigkeit und für die Regelung des Magneten werden Timer benötigt. Timer sind in der Elektronik Peripherien, welche mit Events verknüpft werden können. Es ist also möglich einen Event mit einem Timer zu verknüpfen, damit Prozesse, welche einen gleichmässigen Takt benötigen, zuverlässig ausgeführt werden. Der Regler verwendet einen Timer, damit das Integral und das Differenzial mit einer konstanten Abtastrate berechnet werden können. Dies hat den Vorteil, dass die Berechnungen einfacher und genauer berechnet werden können.
+\newpara
+Ein Interrupt-System dient zur Verknüpfung von Events mit verschiedenen Peripherien. Bei der Bremse wurde ein solches System eingebaut, damit die Geschwindigkeitsmessung genauer berechnet werden kann. Ein Interrupt selbst ist ein Unterbruch im Prozess, welcher von Peripherien ausgelöst werden kann. Bei einem Interrupt wird der aktuelle Prozess gestoppt und ein anderer Prozess wird ausgeführt. Am Ende dieses Prozesses wird wieder mit dem normalen Prozess weitergemacht.
+\newpara
+Die wichtigsten Kriterien für den Mikrocontroller, aus dem oberen Ausschnitt hergeleitet, sind die Geschwindigkeit des Controllers, Timer Peripherie und ein Interrupt-System. Der Speicherplatz ist ebenfalls wichtig, da das Programm gross werden kann. Zusätzlich hätte ein FPU noch einberechnet werden können, aber dies würde den Controller teurer machen und wird bereits mit der Controllergeschwindigkeit kompensiert. 
+\newpara
+Aus Familiarität wurde ein Mikrocontroller der Firma Microchip ausgewählt. Neben der Familiarität existiert bereits eine grosse Community, welche Mikrocontroller verwenden und daher auch Dokumentationen von vielen Funktionen existieren. Aus Recherche und eigener Erfahrung konnten zwei Mikrocontroller ausgewählt werden: Atmega328P und Atmega328PB. Beide sind im Aufbau sehr ähnlich, ausser dass der Atmega328PB einige Verbesserungen besitzt.
+\newpara
+Für das Projekt wurde der \textbf{Atmega328PB} ausgewählt, weil er bessere Timer besitzt, welche länger laufen können, was zu weniger Belastung des Mikrocontrollers führt.
+\subsubsection{USB}
+Die Aufgabe eines USB-Chips ist es, eine Verbindung zwischen einem Computer und einer Elektronik zu erstellen, damit ein Datenaustausch ausgeführt werden kann. In unserem Fall ist es der Datenaustausch von Geschwindigkeitsmessung.
+\newpara
+Als USB-Schnittstellen-Chip wurde der \textbf{FT232RL} von FTDI ausgewählt. Dieser wurde ausgewählt, da bereits gute Erfahrungen mit diesem Chip gemacht wurden. Wenn ein anderer Chip ausgewählt würde, müsste man zuerst sich über die elektronischen Verbindungen informieren (wo muss mit was verbunden werden).
+
+\subsubsection{MOSFET}
+Ein MOSFET ist ein elektronischer Schalter. Im Vergleich zum normalen mechanischen Schalter, welche von Hand betätigt werden kann, wird der MOSFET via einem elektronischen Signal betätigt.
+\newpara
+Bei der Auswahl des MOSFETs muss auf die Belastbarkeit und Grösse geachtet werden. Unter Belastbarkeit ist die maximale Zufuhr von elektronischer Energie gemeint. Bei zu grosser Energie kann es sein, dass der MOSFET explodiert und grossen Schaden an der Elektronik anrichtet. Als Grenzwerte wurde die minimale Belastbarkeit für den Magneten auf 2A begrenzt und die Grösse auf Maximum 2 x 2cm begrenzt. Zur Auswahl standen die folgende MOSFETs:
+\newpage
+\begin{itemize}
+    \item CSD18511 von Texas Instruments
+    \item Si4436DY von Vishay
+    \item CPH6442 von ON-Semiconductor
+\end{itemize}
+
+Für das Projekt wurde der \textbf{CPH6442} ausgewählt. Die Begründung ist die Grösse des Bausteins. In einem 2.8mm x 2.9mm Gehäuse kann dieser Chip eine Belastung von maximal 6A aushalten, was genügend für das Magnet ist. Die maximale Spannung beträgt 60V und ist auch für den Magneten geeignet, da der Widerstand der Wicklung klein ist und daher bei 2A eine kleine Spannung erzeugt. Die anderen Bausteine besassen ähnlichen Attributen, scheiterten aber bei der Grösse.

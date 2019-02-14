@@ -1,0 +1,29 @@
+\begin{figure}[h]
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[
+        axis_regulator_style,
+               %title      = P-Regler mit konstanter Abweichung,
+               ylabel     = {},
+        ylabel near ticks, 
+        yticklabel pos        = left,
+        minor      grid style = {dashed,gray},
+                   xmax       = 110,
+                   xticklabels    = {,,},
+                   xlabel     = {t},
+        legend     style      = {draw=none}
+      ]
+        \addplot[line_blue] table[x=time,y=p,col sep=comma,mark=none]{assets/diagramm/p_regler_ausgesteuert.csv}; 
+        \addlegendentry{Proportionalität}
+      
+        \addplot[line_red] table[x=time,y=e,col sep=comma,mark=none]{assets/diagramm/p_regler_ausgesteuert.csv};     
+        \addlegendentry{Abweichung}
+        
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \vspace{-3ex}
+  
+  \caption{P-Regler mit Schwingungen}
+  \label{fig:plot_p_regulator_out_of_control}
+\end{figure}

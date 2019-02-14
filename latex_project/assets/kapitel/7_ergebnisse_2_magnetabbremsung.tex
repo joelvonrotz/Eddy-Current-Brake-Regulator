@@ -1,0 +1,73 @@
+\subsection{Magnetbremsung}\label{cap:ergebnisse_magnetbremsung}
+\subsubsection{Vor Radanpassung}
+\begin{figure}[ht]
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[
+        axis_results_style,
+        ylabel            = {Drehzahl},
+        xlabel            = {Zeit},
+        ymax              = 12,
+        ymin              = 0,
+        xmax              = 220,
+        xmin              = 0,
+        legend style      = {draw=none},
+        ylabel near ticks, 
+        extra x ticks=0,
+        x unit            = {\si{\second}},
+        y unit            = {\si{1\per\second}},
+      ]
+        \addplot[line_blue] table[x= time,y=electronic,col sep=comma,mark=none]{assets/messurement_results/ohne_mag_ohne_rad.csv}; 
+        \label{plot:omor_electronic}
+        \addlegendentry{Ohne Magnet}
+        \addplot[line_red] table[x= time,y=electronic,col sep=comma,mark=none]{assets/messurement_results/mit_mag_ohne_rad.csv}; 
+        \label{plot:imor_electronic}
+        \addlegendentry{Mit Magnet}
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \vspace{-3ex}
+  \caption{Resultat Ohne \& Mit Magnet, Vor Anpassung bei 4A}
+  \label{fig:plot_or_results}
+\end{figure}
+Die Messung wurde mit 4A anstatt 2A gemacht, da bei 4A die Änderungen besser erkannt werden kann.
+\newpara
+Als Vorgabe war die im Kapitel \ref{cap:methoden_magnet_design} erwähnten Winkelbeschleunigung einzuhalten (1 $rad\cdot s^{-2}$). Diese scheint anhand dieser Messung (Siehe Abbildung \ref{fig:plot_or_results}) diese Vorgabe nicht einzuhalten. Der Grund dafür sind die Trägheit des Rades und daher auch eine Fehlberechnung des Magneten. Nach Überprüfung der Berechnungen wurde herausgefunden, dass nicht nur das Gewicht der Bremsscheibe einzuberechnen war, sondern auch allen Elementen, die an dieser Scheibe befestigt waren. Anhand dieser Erkenntnis wurde die im Kapitel \ref{cap:methoden_radanpassung} erwähnten Anpassung ausgeführt.
+\newpara
+Zu erkennen ist der Effekt des Wirbelstroms im Magnetbetrieb. Ab Sekunde 60 fängt das System schwächer zu Bremsen.
+
+\newpage
+\subsubsection{Nach Radanpassung}
+\begin{figure}[ht]
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[
+        axis_results_style,
+        ylabel            = {Drehzahl},
+        xlabel            = {Zeit},
+        ymax              = 20,
+        ymin              = 0,
+        xmax              = 70,
+        xmin              = 0,
+        legend style      = {draw=none},
+        ylabel near ticks, 
+        extra x ticks=0,
+        x unit            = {\si{\second}},
+        y unit            = {\si{1\per\second}},
+      ]
+        \addplot[line_blue] table[x=time,y=electronic,col sep=comma,mark=none]{assets/messurement_results/ommr.csv};
+        \label{plot:omir_electronic}
+        \addlegendentry{Ohne Magnet}
+        \addplot[line_red] table[x= time,y=electronic,col sep=comma,mark=none]{assets/messurement_results/mit_mag_mit_rad.csv}; 
+        \label{plot:imir_electronic}
+        \addlegendentry{Mit Magnet}
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \vspace{-3ex}
+  \caption{Resultat Ohne \& Mit Magnet, Nach Anpassung bei 4A}
+  \label{fig:plot_ir_results}
+\end{figure}
+Die Messung wurde mit 4A anstatt 2A gemacht, da bei 4A die Änderungen besser erkannt werden kann.
+\newpara
+Die allgemeine Abbremsung konnte um ein dreifaches gekürzt werden (ca. 12kg Metall konnte entfernt werden). Die Winkelbeschleunigung dieser Messung ist sehr nahe der erwartenden Abbremsung. Der Knick in der Magnetbremsung ab Sekunde 7 repräsentiert den Zeitpunkt, wo der Magnet eingeschaltet wurde. Wiederum kann die schwächere Bremsung gegen Ende der Magnetbremsung erkannt werden.

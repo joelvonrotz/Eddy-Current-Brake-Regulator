@@ -1,0 +1,35 @@
+\subsection{Magnetbremsung} \label{cap:methoden_magnetbremsung}
+
+Der Aufbau ist derselbe wie bei Kapitel \ref{cap:methoden_drehzahlmessung}. Anstatt die Genauigkeit der Drehzahl zu messen, wird die Abbremsung des Rades gemessen. Dabei wird das Rad unterschiedlich beeinflusst, mit eingeschaltetem Magnet und mit ausgeschaltetem Magnet (Leerlauf, ohne Beeinflussung). Werden zwei Messungen gemacht mit ein- und ausgeschaltetem Magnet, kann die Kurve verglichen werden und dadurch kann erkannt werden, ob der Magnet einen Einfluss hat.
+\newpara
+Die Erwartungen dieser Messung ist das Verhalten der Bremse anhand des Vergleichs (im oberen Paragraphen erwähnt) messen zu können. Im Kapitel \ref{cap:methoden_magnet_design} wird mit der Formel \ref{equ:winkelbeschleunigung} die Winkelbeschleunigung berechnet, welche in dieser Messung zur Auswertung verwendet wird. Wiederum im Kapitel \ref{cap:methoden_magnet_design} wurde erwähnt, dass die gewünschte Winkelbeschleunigung/-abbremsung 1 rad·s-2 entspricht. Die Messresultate der Elektronik müssen daher zuerst in die Winkelbeschleunigung umgewandelt werden. Die Winkelbeschleunigung entspricht der Kreisfrequenzänderung während einer bestimmten Zeit (Siehe Formel \ref{equ:winkelbeschleunigung_magnetbraking}).
+
+\begin{equation}
+    \label{equ:winkelbeschleunigung_magnetbraking}
+    \alpha=\frac{\Delta\omega}{\Delta t}=\frac{\omega_2-\omega_1}{\Delta t} \tag{23}
+  \end{equation}
+  \begin{gather}
+  \shortintertext{\textbf{Begriffe:}}
+  \begin{tabularx}{0.9\textwidth}{ll}
+$\alpha$ &	Winkelbeschleunigung\\
+$\Delta\omega$    &   Kreisfrequenzänderung während der Zeit $\Delta t$\\
+$\Delta t$    &   Zeit während zwei Zeitpunkten (diese Zeit wird in Kapitel (Datenauswertung) berechnet)\\
+$\omega_1$    &   Anfangskreisfrequenz\\
+$\omega_2$    &   Endkreisfrequenz\\
+  \end{tabularx}\nonumber
+\end{gather}
+(\cite[S.88]{kuchling2014taschenbuch})
+\newpara
+Wird diese Formel mit der Formel der Winkelfrequenz ($\omega=2\cdot \pi\cdot n$) erweitert, kann die Winkelbeschleunigung mit der Drehzahl berechnet werden (Siehe Formel \ref{equ:winkelbeschleunigung_magnetbraking_erweitert}).
+\begin{equation}
+    \label{equ:winkelbeschleunigung_magnetbraking_erweitert}
+    \alpha=\frac{(2\cdot \pi\cdot n_2)-(\omega=2\cdot \pi\cdot n_1)}{\Delta t}=\frac{2\cdot \pi\cdot(n_2-n_1)}{\Delta t} \tag{24}
+  \end{equation}
+  \begin{gather}
+  \shortintertext{\textbf{Begriffe:}}
+  \begin{tabularx}{0.9\textwidth}{ll}
+$n_1$    &   Anfangsdrehzahl\\
+$n_2$    &   Enddrehzahl\\
+  \end{tabularx}\nonumber
+\end{gather}
+

@@ -1,0 +1,9 @@
+\subsection{Magnetansteuerung - Konzept} \label{cap:methoden_magnetansteuerung}
+Dieses Kapitel gilt als Konzept, da anhand Fehlberechnungen, Zeitdruck und Vergleichung gemessener Werte die Umsetzung dieser Methode nicht möglich war.
+\newpara
+
+Das Magnet würde mit einem PWM-Signal angesteuert werden, was uns erlaubt, das Magnet unterschiedlich stark anzusteuern. PWM, Pulse-Width-Modulation, ist in der Elektronikwelt weit verbreitet, z.B. in LED-Lampen mit verstellbarer Helligkeit. Bei einem PWM-Signal wird ein Element eine bestimmte Zeit lang ein- und ausgeschaltet, wobei das Verhältnis zwischen diesen beiden Zeiten als Tastgrad angegeben wird. Der Tastgrad gibt in Prozent an, wie lange das Element während einer Periode eingeschaltet bleibt. In anderen Worten, der Tastgrad gibt an, wie viel von der maximalen Energie der Magnet erhält (Siehe Abbildung \ref{fig:plot_pwm}).
+\newpara
+\input{assets/diagramm/pwm.tex}
+\newpara
+In Kombination mit dem Regler wäre es dann möglich, je nach Abweichung und Regler-Werten, den Magneten unterschiedlich stark anzusteuern.
