@@ -1,0 +1,209 @@
+EESchema Schematic File Version 4
+LIBS:wirbelstrombremse_regler-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 5
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L kicad_joelvonrotz_connector:CON_PHOENIX_1725656 J?
+U 1 1 5C272624
+P 3000 2600
+AR Path="/5C272624" Ref="J?"  Part="1" 
+AR Path="/5C263436/5C272624" Ref="J3"  Part="1" 
+F 0 "J3" H 3228 2496 50  0000 L CNN
+F 1 "CON_PHOENIX_1725656" H 2000 3800 50  0001 L TNN
+F 2 "MECHANICAL:CON_MPT_1725656" H 2000 3700 50  0001 L TNN
+F 3 "https://www.farnell.com/datasheets/2309717.pdf" H 2000 4300 50  0001 L TNN
+F 4 "1725656" H 3228 2405 50  0000 L CNN "ValueSymbol"
+F 5 "277-1273-ND" H 2000 4100 50  0001 L TNN "DigikeyNumber"
+F 6 "651-1725656" H 2000 4000 50  0001 L TNN "MouserNumber"
+F 7 "3041359" H 2000 4200 50  0001 L TNN "FarnellNumber"
+	1    3000 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_connector:CON_PHOENIX_1725656 J?
+U 1 1 5C27262E
+P 5100 2900
+AR Path="/5C27262E" Ref="J?"  Part="1" 
+AR Path="/5C263436/5C27262E" Ref="J4"  Part="1" 
+F 0 "J4" H 5328 2796 50  0000 L CNN
+F 1 "CON_PHOENIX_1725656" H 4100 4100 50  0001 L TNN
+F 2 "MECHANICAL:CON_MPT_1725656" H 4100 4000 50  0001 L TNN
+F 3 "https://www.farnell.com/datasheets/2309717.pdf" H 4100 4600 50  0001 L TNN
+F 4 "1725656" H 5328 2705 50  0000 L CNN "ValueSymbol"
+F 5 "277-1273-ND" H 4100 4400 50  0001 L TNN "DigikeyNumber"
+F 6 "651-1725656" H 4100 4300 50  0001 L TNN "MouserNumber"
+F 7 "3041359" H 4100 4500 50  0001 L TNN "FarnellNumber"
+	1    5100 2900
+	1    0    0    1   
+$EndComp
+$Comp
+L kicad_joelvonrotz_power:GND #PWR?
+U 1 1 5C272634
+P 4800 3000
+AR Path="/5C272634" Ref="#PWR?"  Part="1" 
+AR Path="/5C263436/5C272634" Ref="#PWR0120"  Part="1" 
+F 0 "#PWR0120" H 5000 3100 50  0001 C CNN
+F 1 "GND" H 4796 2825 50  0000 C CNN
+F 2 "" H 4800 3200 50  0001 C CNN
+F 3 "" H 4800 3200 50  0001 C CNN
+	1    4800 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_power:GND #PWR?
+U 1 1 5C27263A
+P 2700 3000
+AR Path="/5C27263A" Ref="#PWR?"  Part="1" 
+AR Path="/5C263436/5C27263A" Ref="#PWR0121"  Part="1" 
+F 0 "#PWR0121" H 2900 3100 50  0001 C CNN
+F 1 "GND" H 2696 2825 50  0000 C CNN
+F 2 "" H 2700 3200 50  0001 C CNN
+F 3 "" H 2700 3200 50  0001 C CNN
+	1    2700 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 3000 2700 2800
+Wire Wire Line
+	2700 2800 2800 2800
+Wire Wire Line
+	4900 2800 4800 2800
+$Comp
+L kicad_joelvonrotz_power:+5V #PWR?
+U 1 1 5C272643
+P 2300 2600
+AR Path="/5C272643" Ref="#PWR?"  Part="1" 
+AR Path="/5C263436/5C272643" Ref="#PWR0122"  Part="1" 
+F 0 "#PWR0122" H 2300 2770 50  0001 C CNN
+F 1 "+5V" H 2280 2773 50  0000 C CNN
+F 2 "" H 2300 2800 50  0001 C CNN
+F 3 "" H 2300 2800 50  0001 C CNN
+	1    2300 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_passive:CAP_10uF_0805 C?
+U 1 1 5C27264E
+P 2300 2800
+AR Path="/5C27264E" Ref="C?"  Part="1" 
+AR Path="/5C263436/5C27264E" Ref="C8"  Part="1" 
+F 0 "C8" V 2312 2928 50  0000 L CNN
+F 1 "CAP_10uF_0805" H 1300 3665 50  0001 L TNN
+F 2 "PASSIVES:CAP_0805" H 1300 4400 50  0001 L TNN
+F 3 "https://www.farnell.com/datasheets/2079185.pdf" H 1300 4500 50  0001 L TNN
+F 4 "GRM21BR61E106MA73L" H 1300 4200 50  0001 L TNN "ValueSymbol"
+F 5 "490-10748-1-ND" H 1300 3800 50  0001 L TNN "DigikeyNumber"
+F 6 "81-GRM21BR61E106MA3L" H 1300 3900 50  0001 L TNN "MouserNumber"
+F 7 "2611941" H 1300 4000 50  0001 L TNN "FarnellNumber"
+F 8 "10uF" V 2395 2928 39  0000 L CNN "resistance"
+	1    2300 2800
+	0    1    1    0   
+$EndComp
+$Comp
+L kicad_joelvonrotz_power:GND #PWR?
+U 1 1 5C272654
+P 2300 3000
+AR Path="/5C272654" Ref="#PWR?"  Part="1" 
+AR Path="/5C263436/5C272654" Ref="#PWR0123"  Part="1" 
+F 0 "#PWR0123" H 2500 3100 50  0001 C CNN
+F 1 "GND" H 2296 2825 50  0000 C CNN
+F 2 "" H 2300 3200 50  0001 C CNN
+F 3 "" H 2300 3200 50  0001 C CNN
+	1    2300 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 2700 2300 2600
+Wire Wire Line
+	2800 2700 2300 2700
+Connection ~ 2300 2700
+$Comp
+L kicad_joelvonrotz_power:+UPOW #PWR?
+U 1 1 5C27265D
+P 4400 2600
+AR Path="/5C27265D" Ref="#PWR?"  Part="1" 
+AR Path="/5C263436/5C27265D" Ref="#PWR0124"  Part="1" 
+F 0 "#PWR0124" H 4400 2770 50  0001 C CNN
+F 1 "+UPOW" H 4380 2773 50  0000 C CNN
+F 2 "" H 4400 2800 50  0001 C CNN
+F 3 "" H 4400 2800 50  0001 C CNN
+	1    4400 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 2700 4400 2600
+$Comp
+L kicad_joelvonrotz_passive:CAP_10uF_0805 C?
+U 1 1 5C272669
+P 4400 2800
+AR Path="/5C272669" Ref="C?"  Part="1" 
+AR Path="/5C263436/5C272669" Ref="C9"  Part="1" 
+F 0 "C9" V 4412 2928 50  0000 L CNN
+F 1 "CAP_10uF_0805" H 3400 3665 50  0001 L TNN
+F 2 "PASSIVES:CAP_0805" H 3400 4400 50  0001 L TNN
+F 3 "https://www.farnell.com/datasheets/2079185.pdf" H 3400 4500 50  0001 L TNN
+F 4 "GRM21BR61E106MA73L" H 3400 4200 50  0001 L TNN "ValueSymbol"
+F 5 "490-10748-1-ND" H 3400 3800 50  0001 L TNN "DigikeyNumber"
+F 6 "81-GRM21BR61E106MA3L" H 3400 3900 50  0001 L TNN "MouserNumber"
+F 7 "2611941" H 3400 4000 50  0001 L TNN "FarnellNumber"
+F 8 "10uF" V 4495 2928 39  0000 L CNN "resistance"
+	1    4400 2800
+	0    1    1    0   
+$EndComp
+Connection ~ 4400 2700
+Wire Wire Line
+	4400 2700 4900 2700
+$Comp
+L kicad_joelvonrotz_power:GND #PWR?
+U 1 1 5C272671
+P 4400 3000
+AR Path="/5C272671" Ref="#PWR?"  Part="1" 
+AR Path="/5C263436/5C272671" Ref="#PWR0125"  Part="1" 
+F 0 "#PWR0125" H 4600 3100 50  0001 C CNN
+F 1 "GND" H 4396 2825 50  0000 C CNN
+F 2 "" H 4400 3200 50  0001 C CNN
+F 3 "" H 4400 3200 50  0001 C CNN
+	1    4400 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 2800 4800 3000
+Text Notes 2200 2300 0    100  ~ 20
+Logic Power
+Text Notes 4200 2300 0    100  ~ 20
+Magnet Power
+$Comp
+L kicad_joelvonrotz_mechanical:HOLE_2.7mm H2
+U 1 1 5C1223F9
+P 2320 1160
+F 0 "H2" H 2398 1152 50  0000 L CNN
+F 1 "HOLE_2.7mm" H 2320 1560 50  0001 C CNN
+F 2 "MECHANICAL:HOLE_2.7mm" H 2320 1310 50  0001 C CNN
+F 3 "" H 2320 1310 50  0001 C CNN
+	1    2320 1160
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_mechanical:HOLE_2.7mm H1
+U 1 1 5C122E24
+P 2010 1170
+F 0 "H1" H 2088 1162 50  0000 L CNN
+F 1 "HOLE_2.7mm" H 2010 1570 50  0001 C CNN
+F 2 "MECHANICAL:HOLE_2.7mm" H 2010 1320 50  0001 C CNN
+F 3 "" H 2010 1320 50  0001 C CNN
+	1    2010 1170
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

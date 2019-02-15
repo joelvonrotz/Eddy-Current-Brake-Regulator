@@ -1,0 +1,922 @@
+EESchema Schematic File Version 4
+LIBS:wirbelstrombremse_regler-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 5
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Wire Wire Line
+	2600 6300 2700 6300
+Wire Wire Line
+	2700 6200 2600 6200
+Connection ~ 2700 6200
+Wire Wire Line
+	2700 6200 2700 6300
+Wire Wire Line
+	2600 6100 2700 6100
+Connection ~ 2700 6100
+Wire Wire Line
+	2700 6100 2700 6200
+Wire Wire Line
+	2600 6000 2700 6000
+Wire Wire Line
+	2700 6000 2700 6100
+Text Label 1500 6200 0    50   ~ 0
+T3
+Text Label 1500 6300 0    50   ~ 0
+T4
+Wire Wire Line
+	1500 6200 1900 6200
+Wire Wire Line
+	1500 6300 1900 6300
+Text Label 1500 6100 0    50   ~ 0
+T1
+Text Label 1500 6000 0    50   ~ 0
+EXINT
+Wire Wire Line
+	1500 6000 1900 6000
+Wire Wire Line
+	1500 6100 1900 6100
+$Comp
+L kicad_joelvonrotz_connector:SL_100mil_2x4p J?
+U 1 1 5C252517
+P 2100 5900
+AR Path="/5C252517" Ref="J?"  Part="1" 
+AR Path="/5C22DAA4/5C252517" Ref="J2"  Part="1" 
+F 0 "J2" H 2250 6065 50  0000 C CNN
+F 1 "SL_100mil_2x4p" H 2250 5974 50  0000 C CNN
+F 2 "MECHANICAL:SL_100MIL_2x4p" H 1100 7000 50  0001 L TNN
+F 3 "https://www.mouser.ch/datasheet/2/527/tsw_th-1346766.pdf" H 1100 7600 50  0001 L TNN
+F 4 "TSW-104-07-F-D" H 1100 7100 50  0001 L TNN "ValueSymbol"
+F 5 "SAM8996-ND" H 1100 7400 50  0001 L TNN "DigikeyNumber"
+F 6 "200-TSW10407FD" H 1100 7300 50  0001 L TNN "MouserNumber"
+F 7 "2856907" H 1100 7500 50  0001 L TNN "FarnellNumber"
+	1    2100 5900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 6000 2700 6000
+Connection ~ 2700 6000
+Text Label 3300 5100 2    50   ~ 0
+FET
+Wire Wire Line
+	2600 5100 2700 5100
+Wire Wire Line
+	2600 5200 2700 5200
+Wire Wire Line
+	2700 5200 2700 5100
+Connection ~ 2700 5100
+Wire Wire Line
+	2700 5100 3300 5100
+Wire Wire Line
+	2600 5300 2700 5300
+Wire Wire Line
+	2700 5300 2700 5200
+Connection ~ 2700 5200
+Text Label 1500 5100 0    50   ~ 0
+OUT0
+Wire Wire Line
+	1500 5100 1900 5100
+Text Label 1500 5200 0    50   ~ 0
+OUT1
+Wire Wire Line
+	1500 5200 1900 5200
+Text Label 1500 5300 0    50   ~ 0
+OUT3_4
+Wire Wire Line
+	1500 5300 1900 5300
+$Comp
+L kicad_joelvonrotz_power:+5V #PWR?
+U 1 1 5C25BBAD
+P 4800 2900
+AR Path="/5C25BBAD" Ref="#PWR?"  Part="1" 
+AR Path="/5C22DAA4/5C25BBAD" Ref="#PWR0101"  Part="1" 
+F 0 "#PWR0101" H 4800 3070 50  0001 C CNN
+F 1 "+5V" H 4780 3073 50  0000 C CNN
+F 2 "" H 4800 3100 50  0001 C CNN
+F 3 "" H 4800 3100 50  0001 C CNN
+	1    4800 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_power:GND #PWR?
+U 1 1 5C25BBB3
+P 1800 3100
+AR Path="/5C25BBB3" Ref="#PWR?"  Part="1" 
+AR Path="/5C22DAA4/5C25BBB3" Ref="#PWR0102"  Part="1" 
+F 0 "#PWR0102" H 2000 3200 50  0001 C CNN
+F 1 "GND" H 1796 2925 50  0000 C CNN
+F 2 "" H 1800 3300 50  0001 C CNN
+F 3 "" H 1800 3300 50  0001 C CNN
+	1    1800 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 3100 1800 3000
+Wire Wire Line
+	1800 2900 1900 2900
+Wire Wire Line
+	1900 3000 1800 3000
+Connection ~ 1800 3000
+Wire Wire Line
+	1800 3000 1800 2900
+Wire Wire Line
+	4700 2900 4800 2900
+Wire Wire Line
+	4700 3000 4800 3000
+Wire Wire Line
+	4800 3000 4800 2900
+Connection ~ 4800 2900
+$Comp
+L kicad_joelvonrotz_IC:ATMEGA328PB-AU U?
+U 1 1 5C25BBC6
+P 2100 1000
+AR Path="/5C25BBC6" Ref="U?"  Part="1" 
+AR Path="/5C22DAA4/5C25BBC6" Ref="U1"  Part="1" 
+F 0 "U1" H 3300 1165 50  0000 C CNN
+F 1 "ATMEGA328PB-AU" H 3300 1074 50  0000 C CNN
+F 2 "IC:TQFP32_7x7_800" H 1100 2300 50  0001 L TNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/40001906C.pdf" H 1100 2700 50  0001 L TNN
+F 4 "ATMEGA328PB-AU" H 1100 2400 50  0001 L TNN "ValueSymbol"
+F 5 "ATMEGA328PB-AURCT-ND" H 1100 2500 50  0001 L TNN "DigikeyNumber"
+F 6 "556-ATMEGA328PB-AU" H 1100 2600 50  0001 L TNN "MouserNumber"
+F 7 "2523203" H 1100 2200 50  0001 L TNN "FarnellNumber"
+	1    2100 1000
+	1    0    0    -1  
+$EndComp
+Text Label 5200 2300 2    50   ~ 0
+T3
+Text Label 5200 2100 2    50   ~ 0
+T4
+Text Label 1400 2400 0    50   ~ 0
+T1
+Text Label 1400 2200 0    50   ~ 0
+EXINT
+Wire Wire Line
+	1400 2200 1900 2200
+Wire Wire Line
+	1400 2400 1900 2400
+Wire Wire Line
+	4700 2300 5200 2300
+Wire Wire Line
+	4700 2100 5200 2100
+Text Label 1400 2500 0    50   ~ 0
+OUT0
+Wire Wire Line
+	1400 2500 1900 2500
+Text Label 5200 1200 2    50   ~ 0
+OUT1
+Wire Wire Line
+	5200 1200 4700 1200
+Text Label 1400 2100 0    50   ~ 0
+OUT3_4
+Wire Wire Line
+	1400 2100 1900 2100
+NoConn ~ 4700 2200
+NoConn ~ 1900 2600
+NoConn ~ 1900 2300
+$Comp
+L kicad_joelvonrotz_passive:CAP_100nF_0603 C?
+U 1 1 5C25BBE5
+P 5100 2700
+AR Path="/5C25BBE5" Ref="C?"  Part="1" 
+AR Path="/5C22DAA4/5C25BBE5" Ref="C3"  Part="1" 
+F 0 "C3" V 5112 2828 50  0000 L CNN
+F 1 "CAP_100nF_0603" H 4100 3565 50  0001 L TNN
+F 2 "PASSIVES:CAP_0603" H 4100 4300 50  0001 L TNN
+F 3 "https://www.farnell.com/datasheets/1958469.pdf" H 4100 4400 50  0001 L TNN
+F 4 "885012206020" H 4100 4100 50  0001 L TNN "ValueSymbol"
+F 5 "732-7939-1-ND" H 4100 3700 50  0001 L TNN "DigikeyNumber"
+F 6 "710-885012206020" H 4100 3800 50  0001 L TNN "MouserNumber"
+F 7 "2495168" H 4100 3900 50  0001 L TNN "FarnellNumber"
+F 8 "100nF" V 5195 2828 39  0000 L CNN "resistance"
+	1    5100 2700
+	0    1    1    0   
+$EndComp
+$Comp
+L kicad_joelvonrotz_passive:CAP_100nF_0603 C?
+U 1 1 5C25BBF0
+P 3000 3700
+AR Path="/5C25BBF0" Ref="C?"  Part="1" 
+AR Path="/5C22DAA4/5C25BBF0" Ref="C1"  Part="1" 
+F 0 "C1" V 3012 3828 50  0000 L CNN
+F 1 "CAP_100nF_0603" H 2000 4565 50  0001 L TNN
+F 2 "PASSIVES:CAP_0603" H 2000 5300 50  0001 L TNN
+F 3 "https://www.farnell.com/datasheets/1958469.pdf" H 2000 5400 50  0001 L TNN
+F 4 "885012206020" H 2000 5100 50  0001 L TNN "ValueSymbol"
+F 5 "732-7939-1-ND" H 2000 4700 50  0001 L TNN "DigikeyNumber"
+F 6 "710-885012206020" H 2000 4800 50  0001 L TNN "MouserNumber"
+F 7 "2495168" H 2000 4900 50  0001 L TNN "FarnellNumber"
+F 8 "100nF" V 3095 3828 39  0000 L CNN "resistance"
+	1    3000 3700
+	0    1    1    0   
+$EndComp
+$Comp
+L kicad_joelvonrotz_passive:CAP_100nF_0603 C?
+U 1 1 5C25BBFB
+P 3600 3700
+AR Path="/5C25BBFB" Ref="C?"  Part="1" 
+AR Path="/5C22DAA4/5C25BBFB" Ref="C2"  Part="1" 
+F 0 "C2" V 3612 3828 50  0000 L CNN
+F 1 "CAP_100nF_0603" H 2600 4565 50  0001 L TNN
+F 2 "PASSIVES:CAP_0603" H 2600 5300 50  0001 L TNN
+F 3 "https://www.farnell.com/datasheets/1958469.pdf" H 2600 5400 50  0001 L TNN
+F 4 "885012206020" H 2600 5100 50  0001 L TNN "ValueSymbol"
+F 5 "732-7939-1-ND" H 2600 4700 50  0001 L TNN "DigikeyNumber"
+F 6 "710-885012206020" H 2600 4800 50  0001 L TNN "MouserNumber"
+F 7 "2495168" H 2600 4900 50  0001 L TNN "FarnellNumber"
+F 8 "100nF" V 3695 3828 39  0000 L CNN "resistance"
+	1    3600 3700
+	0    1    1    0   
+$EndComp
+$Comp
+L kicad_joelvonrotz_power:GND #PWR?
+U 1 1 5C25BC01
+P 5100 2900
+AR Path="/5C25BC01" Ref="#PWR?"  Part="1" 
+AR Path="/5C22DAA4/5C25BC01" Ref="#PWR0103"  Part="1" 
+F 0 "#PWR0103" H 5300 3000 50  0001 C CNN
+F 1 "GND" H 5096 2725 50  0000 C CNN
+F 2 "" H 5100 3100 50  0001 C CNN
+F 3 "" H 5100 3100 50  0001 C CNN
+	1    5100 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_power:GND #PWR?
+U 1 1 5C25BC07
+P 3000 3900
+AR Path="/5C25BC07" Ref="#PWR?"  Part="1" 
+AR Path="/5C22DAA4/5C25BC07" Ref="#PWR0104"  Part="1" 
+F 0 "#PWR0104" H 3200 4000 50  0001 C CNN
+F 1 "GND" H 2996 3725 50  0000 C CNN
+F 2 "" H 3000 4100 50  0001 C CNN
+F 3 "" H 3000 4100 50  0001 C CNN
+	1    3000 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_power:GND #PWR?
+U 1 1 5C25BC0D
+P 3600 3900
+AR Path="/5C25BC0D" Ref="#PWR?"  Part="1" 
+AR Path="/5C22DAA4/5C25BC0D" Ref="#PWR0105"  Part="1" 
+F 0 "#PWR0105" H 3800 4000 50  0001 C CNN
+F 1 "GND" H 3596 3725 50  0000 C CNN
+F 2 "" H 3600 4100 50  0001 C CNN
+F 3 "" H 3600 4100 50  0001 C CNN
+	1    3600 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_power:+5V #PWR?
+U 1 1 5C25BC13
+P 3300 3500
+AR Path="/5C25BC13" Ref="#PWR?"  Part="1" 
+AR Path="/5C22DAA4/5C25BC13" Ref="#PWR0106"  Part="1" 
+F 0 "#PWR0106" H 3300 3670 50  0001 C CNN
+F 1 "+5V" H 3280 3673 50  0000 C CNN
+F 2 "" H 3300 3700 50  0001 C CNN
+F 3 "" H 3300 3700 50  0001 C CNN
+	1    3300 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 3500 3000 3600
+Wire Wire Line
+	3000 3500 3300 3500
+Wire Wire Line
+	3600 3600 3600 3500
+Wire Wire Line
+	3600 3500 3300 3500
+Connection ~ 3300 3500
+Wire Wire Line
+	5100 2600 4700 2600
+Wire Wire Line
+	5200 1700 4700 1700
+NoConn ~ 4700 1800
+Wire Wire Line
+	5200 1600 4700 1600
+Wire Wire Line
+	5200 1400 4700 1400
+Wire Wire Line
+	5200 1500 4700 1500
+Text Label 1400 1700 0    50   ~ 0
+~RESET~
+Wire Wire Line
+	1400 1700 1900 1700
+NoConn ~ 4700 2000
+NoConn ~ 4700 1300
+NoConn ~ 4700 1100
+Text Label 1400 1200 0    50   ~ 0
+PCINT_DEC
+Wire Wire Line
+	1400 1200 1900 1200
+Text Label 1400 1100 0    50   ~ 0
+PCINT_SET
+Wire Wire Line
+	1400 1100 1900 1100
+Text Label 1400 1300 0    50   ~ 0
+PCINT_INC
+Wire Wire Line
+	1400 1300 1900 1300
+$Comp
+L kicad_joelvonrotz_IC:OSZ_LFSPXO019275 U?
+U 1 1 5C266292
+P 9600 3700
+AR Path="/5C266292" Ref="U?"  Part="1" 
+AR Path="/5C22DAA4/5C266292" Ref="U2"  Part="1" 
+F 0 "U2" H 9550 3965 50  0000 C CNN
+F 1 "OSZ_LFSPXO019275" H 8600 4565 50  0001 L TNN
+F 2 "DISCRETES:IQD_CFPS-72" H 8600 5300 50  0001 L TNN
+F 3 "https://www.farnell.com/datasheets/1853027.pdf" H 8600 5400 50  0001 L TNN
+F 4 "LFSPXO019275" H 9550 3874 50  0000 C CNN "ValueSymbol"
+F 5 "1923-1114-1-ND" H 8600 4700 50  0001 L TNN "DigikeyNumber"
+F 6 "449-LFSPXO019275REEL" H 8600 4800 50  0001 L TNN "MouserNumber"
+F 7 "2449457" H 8600 4900 50  0001 L TNN "FarnellNumber"
+	1    9600 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_power:+5V #PWR?
+U 1 1 5C266298
+P 9000 3600
+AR Path="/5C266298" Ref="#PWR?"  Part="1" 
+AR Path="/5C22DAA4/5C266298" Ref="#PWR0107"  Part="1" 
+F 0 "#PWR0107" H 9000 3770 50  0001 C CNN
+F 1 "+5V" H 8980 3773 50  0000 C CNN
+F 2 "" H 9000 3800 50  0001 C CNN
+F 3 "" H 9000 3800 50  0001 C CNN
+	1    9000 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9000 3600 9000 3700
+Wire Wire Line
+	9000 3800 9100 3800
+Wire Wire Line
+	9100 3700 9000 3700
+Connection ~ 9000 3700
+Wire Wire Line
+	9000 3700 9000 3800
+$Comp
+L kicad_joelvonrotz_power:GND #PWR?
+U 1 1 5C2662A3
+P 10100 3900
+AR Path="/5C2662A3" Ref="#PWR?"  Part="1" 
+AR Path="/5C22DAA4/5C2662A3" Ref="#PWR0108"  Part="1" 
+F 0 "#PWR0108" H 10300 4000 50  0001 C CNN
+F 1 "GND" H 10096 3725 50  0000 C CNN
+F 2 "" H 10100 4100 50  0001 C CNN
+F 3 "" H 10100 4100 50  0001 C CNN
+	1    10100 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10100 3900 10100 3800
+Wire Wire Line
+	10100 3800 10000 3800
+Text Label 10500 3700 2    50   ~ 0
+OSC_IN
+Wire Wire Line
+	10500 3700 10000 3700
+$Comp
+L kicad_joelvonrotz_passive:CAP_100nF_0603 C?
+U 1 1 5C2662B2
+P 9000 3900
+AR Path="/5C2662B2" Ref="C?"  Part="1" 
+AR Path="/5C22DAA4/5C2662B2" Ref="C7"  Part="1" 
+F 0 "C7" V 9012 4028 50  0000 L CNN
+F 1 "CAP_100nF_0603" H 8000 4765 50  0001 L TNN
+F 2 "PASSIVES:CAP_0603" H 8000 5500 50  0001 L TNN
+F 3 "https://www.farnell.com/datasheets/1958469.pdf" H 8000 5600 50  0001 L TNN
+F 4 "885012206020" H 8000 5300 50  0001 L TNN "ValueSymbol"
+F 5 "732-7939-1-ND" H 8000 4900 50  0001 L TNN "DigikeyNumber"
+F 6 "710-885012206020" H 8000 5000 50  0001 L TNN "MouserNumber"
+F 7 "2495168" H 8000 5100 50  0001 L TNN "FarnellNumber"
+F 8 "100nF" V 9095 4028 39  0000 L CNN "resistance"
+	1    9000 3900
+	0    1    1    0   
+$EndComp
+$Comp
+L kicad_joelvonrotz_power:GND #PWR?
+U 1 1 5C2662B8
+P 9000 4100
+AR Path="/5C2662B8" Ref="#PWR?"  Part="1" 
+AR Path="/5C22DAA4/5C2662B8" Ref="#PWR0109"  Part="1" 
+F 0 "#PWR0109" H 9200 4200 50  0001 C CNN
+F 1 "GND" H 8996 3925 50  0000 C CNN
+F 2 "" H 9000 4300 50  0001 C CNN
+F 3 "" H 9000 4300 50  0001 C CNN
+	1    9000 4100
+	1    0    0    -1  
+$EndComp
+Connection ~ 9000 3800
+Text Notes 9000 3200 0    100  ~ 20
+16MHz
+Text Label 8900 5600 0    50   ~ 0
+FET
+Wire Wire Line
+	8900 5600 9300 5600
+$Comp
+L kicad_joelvonrotz_power:GND #PWR?
+U 1 1 5C27523D
+P 9500 5700
+AR Path="/5C27523D" Ref="#PWR?"  Part="1" 
+AR Path="/5C22DAA4/5C27523D" Ref="#PWR0110"  Part="1" 
+F 0 "#PWR0110" H 9700 5800 50  0001 C CNN
+F 1 "GND" H 9496 5525 50  0000 C CNN
+F 2 "" H 9500 5900 50  0001 C CNN
+F 3 "" H 9500 5900 50  0001 C CNN
+	1    9500 5700
+	1    0    0    -1  
+$EndComp
+Text Label 9900 5100 2    50   ~ 0
+MAGNET
+Wire Wire Line
+	9500 5100 9500 5300
+Wire Wire Line
+	9500 5100 9900 5100
+$Comp
+L kicad_joelvonrotz_discretes:MOSFET_CPH6442 Q?
+U 1 1 5C27524A
+P 9400 5600
+AR Path="/5C27524A" Ref="Q?"  Part="1" 
+AR Path="/5C22DAA4/5C27524A" Ref="Q1"  Part="1" 
+F 0 "Q1" H 9618 5700 50  0000 L CNN
+F 1 "MOSFET_CPH6442" H 8400 6465 50  0001 L TNN
+F 2 "DISCRETES:ONSEMI_318BD" H 8400 7200 50  0001 L TNN
+F 3 "https://www.onsemi.com/pub/Collateral/CPH6442-D.PDF" H 8400 7300 50  0001 L TNN
+F 4 "CPH6442-TL-WOSCT-ND" H 8400 7000 50  0001 L TNN "ValueSymbol"
+F 5 "CPH6442-TL-WOSCT-ND" H 8400 6600 50  0001 L TNN "DigikeyNumber"
+F 6 "863-CPH6442-TL-W" H 8400 6700 50  0001 L TNN "MouserNumber"
+F 7 "2845360" H 8400 6800 50  0001 L TNN "FarnellNumber"
+	1    9400 5600
+	1    0    0    -1  
+$EndComp
+Text Notes 8900 4800 0    100  ~ 20
+Magnet-FET
+$Comp
+L kicad_joelvonrotz_passive:RES_10k_0603 R7
+U 1 1 5C2B1C7A
+P 10400 1500
+F 0 "R7" V 10462 1568 50  0000 L CNN
+F 1 "RES_10k_0603" H 9400 2400 50  0001 L TNN
+F 2 "PASSIVES:RES_0603" H 9400 3100 50  0001 L TNN
+F 3 "http://www.yageo.com/documents/recent/PYu-RC_Group_51_RoHS_L_9.pdf" H 9400 3200 50  0001 L TNN
+F 4 "RC0603FR-0710KL" H 9400 2900 50  0001 L TNN "ValueSymbol"
+F 5 "311-10.0KHRCT-ND" H 9400 2500 50  0001 L TNN "DigikeyNumber"
+F 6 "603-RC0603FR-0710KL" H 9400 2600 50  0001 L TNN "MouserNumber"
+F 7 "9238603" H 9400 2700 50  0001 L TNN "FarnellNumber"
+F 8 "10k" V 10545 1568 39  0000 L CNN "resistance"
+	1    10400 1500
+	0    1    1    0   
+$EndComp
+$Comp
+L kicad_joelvonrotz_power:+5V #PWR?
+U 1 1 5C2B7BD8
+P 10400 1400
+AR Path="/5C2B7BD8" Ref="#PWR?"  Part="1" 
+AR Path="/5C22DAA4/5C2B7BD8" Ref="#PWR0111"  Part="1" 
+F 0 "#PWR0111" H 10400 1570 50  0001 C CNN
+F 1 "+5V" H 10380 1573 50  0000 C CNN
+F 2 "" H 10400 1600 50  0001 C CNN
+F 3 "" H 10400 1600 50  0001 C CNN
+	1    10400 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_power:GND #PWR?
+U 1 1 5C2B9CB5
+P 9900 1900
+AR Path="/5C2B9CB5" Ref="#PWR?"  Part="1" 
+AR Path="/5C22DAA4/5C2B9CB5" Ref="#PWR0112"  Part="1" 
+F 0 "#PWR0112" H 10100 2000 50  0001 C CNN
+F 1 "GND" H 9896 1725 50  0000 C CNN
+F 2 "" H 9900 2100 50  0001 C CNN
+F 3 "" H 9900 2100 50  0001 C CNN
+	1    9900 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_mechanical:BUT_B3F-1022 SW4
+U 1 1 5C2BBCB8
+P 10000 1800
+F 0 "SW4" H 10200 1923 50  0000 C CNN
+F 1 "BUT_B3F-1022" H 9000 2665 50  0001 L TNN
+F 2 "MECHANICAL:BUT_B3F-10XX" H 9000 3400 50  0001 L TNN
+F 3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf" H 9000 3500 50  0001 L TNN
+F 4 "B3F-1022" H 9000 3200 50  0001 L TNN "ValueSymbol"
+F 5 "SW403-ND" H 9000 2800 50  0001 L TNN "DigikeyNumber"
+F 6 "653-B3F-1022" H 9000 2900 50  0001 L TNN "MouserNumber"
+F 7 "1829495" H 9000 3000 50  0001 L TNN "FarnellNumber"
+	1    10000 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9900 1900 9900 1800
+Wire Wire Line
+	10200 1800 10400 1800
+Connection ~ 10400 1800
+Text Label 11000 1800 2    50   ~ 0
+~RESET~
+Wire Wire Line
+	10400 1800 11000 1800
+Text Notes 9900 1000 0    100  ~ 20
+Reset Button
+NoConn ~ 1900 1400
+NoConn ~ 1900 1500
+NoConn ~ 1900 1600
+Text Label 6000 2300 0    50   ~ 0
+PCINT_DEC
+Text Label 6000 2000 0    50   ~ 0
+PCINT_SET
+Text Label 6000 2600 0    50   ~ 0
+PCINT_INC
+$Comp
+L kicad_joelvonrotz_mechanical:BUT_B3F-1022 SW3
+U 1 1 5C2EBFD6
+P 8400 2600
+F 0 "SW3" H 8600 2723 50  0000 C CNN
+F 1 "BUT_B3F-1022" H 7400 3465 50  0001 L TNN
+F 2 "MECHANICAL:BUT_B3F-10XX" H 7400 4200 50  0001 L TNN
+F 3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf" H 7400 4300 50  0001 L TNN
+F 4 "B3F-1022" H 7400 4000 50  0001 L TNN "ValueSymbol"
+F 5 "SW403-ND" H 7400 3600 50  0001 L TNN "DigikeyNumber"
+F 6 "653-B3F-1022" H 7400 3700 50  0001 L TNN "MouserNumber"
+F 7 "1829495" H 7400 3800 50  0001 L TNN "FarnellNumber"
+	1    8400 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_mechanical:BUT_B3F-1022 SW1
+U 1 1 5C2F2CDC
+P 8400 2000
+F 0 "SW1" H 8600 2123 50  0000 C CNN
+F 1 "BUT_B3F-1022" H 7400 2865 50  0001 L TNN
+F 2 "MECHANICAL:BUT_B3F-10XX" H 7400 3600 50  0001 L TNN
+F 3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf" H 7400 3700 50  0001 L TNN
+F 4 "B3F-1022" H 7400 3400 50  0001 L TNN "ValueSymbol"
+F 5 "SW403-ND" H 7400 3000 50  0001 L TNN "DigikeyNumber"
+F 6 "653-B3F-1022" H 7400 3100 50  0001 L TNN "MouserNumber"
+F 7 "1829495" H 7400 3200 50  0001 L TNN "FarnellNumber"
+	1    8400 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_mechanical:BUT_B3F-1022 SW2
+U 1 1 5C2F57B9
+P 8400 2300
+F 0 "SW2" H 8600 2423 50  0000 C CNN
+F 1 "BUT_B3F-1022" H 7400 3165 50  0001 L TNN
+F 2 "MECHANICAL:BUT_B3F-10XX" H 7400 3900 50  0001 L TNN
+F 3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf" H 7400 4000 50  0001 L TNN
+F 4 "B3F-1022" H 7400 3700 50  0001 L TNN "ValueSymbol"
+F 5 "SW403-ND" H 7400 3300 50  0001 L TNN "DigikeyNumber"
+F 6 "653-B3F-1022" H 7400 3400 50  0001 L TNN "MouserNumber"
+F 7 "1829495" H 7400 3500 50  0001 L TNN "FarnellNumber"
+	1    8400 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_power:GND #PWR?
+U 1 1 5C2F7FB2
+P 8700 2600
+AR Path="/5C2F7FB2" Ref="#PWR?"  Part="1" 
+AR Path="/5C22DAA4/5C2F7FB2" Ref="#PWR0113"  Part="1" 
+F 0 "#PWR0113" H 8900 2700 50  0001 C CNN
+F 1 "GND" H 8696 2425 50  0000 C CNN
+F 2 "" H 8700 2800 50  0001 C CNN
+F 3 "" H 8700 2800 50  0001 C CNN
+	1    8700 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8700 2600 8600 2600
+$Comp
+L kicad_joelvonrotz_passive:RES_10k_0603 R3
+U 1 1 5C302B97
+P 7100 1500
+F 0 "R3" V 7162 1568 50  0000 L CNN
+F 1 "RES_10k_0603" H 6100 2400 50  0001 L TNN
+F 2 "PASSIVES:RES_0603" H 6100 3100 50  0001 L TNN
+F 3 "http://www.yageo.com/documents/recent/PYu-RC_Group_51_RoHS_L_9.pdf" H 6100 3200 50  0001 L TNN
+F 4 "RC0603FR-0710KL" H 6100 2900 50  0001 L TNN "ValueSymbol"
+F 5 "311-10.0KHRCT-ND" H 6100 2500 50  0001 L TNN "DigikeyNumber"
+F 6 "603-RC0603FR-0710KL" H 6100 2600 50  0001 L TNN "MouserNumber"
+F 7 "9238603" H 6100 2700 50  0001 L TNN "FarnellNumber"
+F 8 "10k" V 7245 1568 39  0000 L CNN "resistance"
+	1    7100 1500
+	0    1    1    0   
+$EndComp
+$Comp
+L kicad_joelvonrotz_power:+5V #PWR?
+U 1 1 5C302B9D
+P 7100 1400
+AR Path="/5C302B9D" Ref="#PWR?"  Part="1" 
+AR Path="/5C22DAA4/5C302B9D" Ref="#PWR0114"  Part="1" 
+F 0 "#PWR0114" H 7100 1570 50  0001 C CNN
+F 1 "+5V" H 7080 1573 50  0000 C CNN
+F 2 "" H 7100 1600 50  0001 C CNN
+F 3 "" H 7100 1600 50  0001 C CNN
+	1    7100 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_passive:RES_10k_0603 R5
+U 1 1 5C315F71
+P 7200 2300
+F 0 "R5" H 7200 2400 50  0000 L CNN
+F 1 "RES_10k_0603" H 6200 3200 50  0001 L TNN
+F 2 "PASSIVES:RES_0603" H 6200 3900 50  0001 L TNN
+F 3 "http://www.yageo.com/documents/recent/PYu-RC_Group_51_RoHS_L_9.pdf" H 6200 4000 50  0001 L TNN
+F 4 "RC0603FR-0710KL" H 6200 3700 50  0001 L TNN "ValueSymbol"
+F 5 "311-10.0KHRCT-ND" H 6200 3300 50  0001 L TNN "DigikeyNumber"
+F 6 "603-RC0603FR-0710KL" H 6200 3400 50  0001 L TNN "MouserNumber"
+F 7 "9238603" H 6200 3500 50  0001 L TNN "FarnellNumber"
+F 8 "10k" V 7345 2368 39  0000 L CNN "resistance"
+	1    7200 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_passive:RES_10k_0603 R6
+U 1 1 5C319A52
+P 7200 2600
+F 0 "R6" H 7200 2700 50  0000 L CNN
+F 1 "RES_10k_0603" H 6200 3500 50  0001 L TNN
+F 2 "PASSIVES:RES_0603" H 6200 4200 50  0001 L TNN
+F 3 "http://www.yageo.com/documents/recent/PYu-RC_Group_51_RoHS_L_9.pdf" H 6200 4300 50  0001 L TNN
+F 4 "RC0603FR-0710KL" H 6200 4000 50  0001 L TNN "ValueSymbol"
+F 5 "311-10.0KHRCT-ND" H 6200 3600 50  0001 L TNN "DigikeyNumber"
+F 6 "603-RC0603FR-0710KL" H 6200 3700 50  0001 L TNN "MouserNumber"
+F 7 "9238603" H 6200 3800 50  0001 L TNN "FarnellNumber"
+F 8 "10k" H 7345 2668 39  0000 L CNN "resistance"
+	1    7200 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_passive:RES_10k_0603 R4
+U 1 1 5C3210ED
+P 7200 2000
+F 0 "R4" H 7200 2100 50  0000 L CNN
+F 1 "RES_10k_0603" H 6200 2900 50  0001 L TNN
+F 2 "PASSIVES:RES_0603" H 6200 3600 50  0001 L TNN
+F 3 "http://www.yageo.com/documents/recent/PYu-RC_Group_51_RoHS_L_9.pdf" H 6200 3700 50  0001 L TNN
+F 4 "RC0603FR-0710KL" H 6200 3400 50  0001 L TNN "ValueSymbol"
+F 5 "311-10.0KHRCT-ND" H 6200 3000 50  0001 L TNN "DigikeyNumber"
+F 6 "603-RC0603FR-0710KL" H 6200 3100 50  0001 L TNN "MouserNumber"
+F 7 "9238603" H 6200 3200 50  0001 L TNN "FarnellNumber"
+F 8 "10k" V 7345 2068 39  0000 L CNN "resistance"
+	1    7200 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8700 2600 8700 2300
+Wire Wire Line
+	8700 2000 8600 2000
+Connection ~ 8700 2600
+Wire Wire Line
+	8600 2300 8700 2300
+Connection ~ 8700 2300
+Wire Wire Line
+	8700 2300 8700 2000
+$Comp
+L kicad_joelvonrotz_passive:RES_10k_0603 R2
+U 1 1 5C33BE33
+P 6800 1500
+F 0 "R2" V 6862 1568 50  0000 L CNN
+F 1 "RES_10k_0603" H 5800 2400 50  0001 L TNN
+F 2 "PASSIVES:RES_0603" H 5800 3100 50  0001 L TNN
+F 3 "http://www.yageo.com/documents/recent/PYu-RC_Group_51_RoHS_L_9.pdf" H 5800 3200 50  0001 L TNN
+F 4 "RC0603FR-0710KL" H 5800 2900 50  0001 L TNN "ValueSymbol"
+F 5 "311-10.0KHRCT-ND" H 5800 2500 50  0001 L TNN "DigikeyNumber"
+F 6 "603-RC0603FR-0710KL" H 5800 2600 50  0001 L TNN "MouserNumber"
+F 7 "9238603" H 5800 2700 50  0001 L TNN "FarnellNumber"
+F 8 "10k" V 6945 1568 39  0000 L CNN "resistance"
+	1    6800 1500
+	0    1    1    0   
+$EndComp
+$Comp
+L kicad_joelvonrotz_passive:RES_10k_0603 R1
+U 1 1 5C33EB14
+P 6500 1500
+F 0 "R1" V 6562 1568 50  0000 L CNN
+F 1 "RES_10k_0603" H 5500 2400 50  0001 L TNN
+F 2 "PASSIVES:RES_0603" H 5500 3100 50  0001 L TNN
+F 3 "http://www.yageo.com/documents/recent/PYu-RC_Group_51_RoHS_L_9.pdf" H 5500 3200 50  0001 L TNN
+F 4 "RC0603FR-0710KL" H 5500 2900 50  0001 L TNN "ValueSymbol"
+F 5 "311-10.0KHRCT-ND" H 5500 2500 50  0001 L TNN "DigikeyNumber"
+F 6 "603-RC0603FR-0710KL" H 5500 2600 50  0001 L TNN "MouserNumber"
+F 7 "9238603" H 5500 2700 50  0001 L TNN "FarnellNumber"
+F 8 "10k" V 6645 1568 39  0000 L CNN "resistance"
+	1    6500 1500
+	0    1    1    0   
+$EndComp
+$Comp
+L kicad_joelvonrotz_power:+5V #PWR?
+U 1 1 5C340D24
+P 6800 1400
+AR Path="/5C340D24" Ref="#PWR?"  Part="1" 
+AR Path="/5C22DAA4/5C340D24" Ref="#PWR0115"  Part="1" 
+F 0 "#PWR0115" H 6800 1570 50  0001 C CNN
+F 1 "+5V" H 6780 1573 50  0000 C CNN
+F 2 "" H 6800 1600 50  0001 C CNN
+F 3 "" H 6800 1600 50  0001 C CNN
+	1    6800 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_power:+5V #PWR?
+U 1 1 5C342F3A
+P 6500 1400
+AR Path="/5C342F3A" Ref="#PWR?"  Part="1" 
+AR Path="/5C22DAA4/5C342F3A" Ref="#PWR0116"  Part="1" 
+F 0 "#PWR0116" H 6500 1570 50  0001 C CNN
+F 1 "+5V" H 6480 1573 50  0000 C CNN
+F 2 "" H 6500 1600 50  0001 C CNN
+F 3 "" H 6500 1600 50  0001 C CNN
+	1    6500 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 1800 7100 2000
+Wire Wire Line
+	6000 2000 7100 2000
+Connection ~ 7100 2000
+Wire Wire Line
+	6800 1800 6800 2300
+Wire Wire Line
+	6800 2300 7100 2300
+Wire Wire Line
+	7500 2300 7800 2300
+Wire Wire Line
+	7100 2600 6500 2600
+Wire Wire Line
+	6500 2600 6500 1800
+Wire Wire Line
+	6000 2300 6800 2300
+Connection ~ 6800 2300
+Wire Wire Line
+	6000 2600 6500 2600
+Connection ~ 6500 2600
+$Comp
+L kicad_joelvonrotz_passive:CAP_100nF_0603 C6
+U 1 1 5C3688EC
+P 8100 2800
+F 0 "C6" V 8075 2825 50  0000 L CNN
+F 1 "CAP_100nF_0603" H 7100 3665 50  0001 L TNN
+F 2 "PASSIVES:CAP_0603" H 7100 4400 50  0001 L TNN
+F 3 "https://www.farnell.com/datasheets/1958469.pdf" H 7100 4500 50  0001 L TNN
+F 4 "885012206020" H 7100 4200 50  0001 L TNN "ValueSymbol"
+F 5 "732-7939-1-ND" H 7100 3800 50  0001 L TNN "DigikeyNumber"
+F 6 "710-885012206020" H 7100 3900 50  0001 L TNN "MouserNumber"
+F 7 "2495168" H 7100 4000 50  0001 L TNN "FarnellNumber"
+F 8 "100nF" V 8225 2825 39  0000 L CNN "resistance"
+	1    8100 2800
+	0    1    1    0   
+$EndComp
+$Comp
+L kicad_joelvonrotz_passive:CAP_100nF_0603 C4
+U 1 1 5C36C114
+P 7500 2800
+F 0 "C4" V 7475 2825 50  0000 L CNN
+F 1 "CAP_100nF_0603" H 6500 3665 50  0001 L TNN
+F 2 "PASSIVES:CAP_0603" H 6500 4400 50  0001 L TNN
+F 3 "https://www.farnell.com/datasheets/1958469.pdf" H 6500 4500 50  0001 L TNN
+F 4 "885012206020" H 6500 4200 50  0001 L TNN "ValueSymbol"
+F 5 "732-7939-1-ND" H 6500 3800 50  0001 L TNN "DigikeyNumber"
+F 6 "710-885012206020" H 6500 3900 50  0001 L TNN "MouserNumber"
+F 7 "2495168" H 6500 4000 50  0001 L TNN "FarnellNumber"
+F 8 "100nF" V 7625 2825 39  0000 L CNN "resistance"
+	1    7500 2800
+	0    1    1    0   
+$EndComp
+$Comp
+L kicad_joelvonrotz_passive:CAP_100nF_0603 C5
+U 1 1 5C36FB5D
+P 7800 2800
+F 0 "C5" V 7775 2825 50  0000 L CNN
+F 1 "CAP_100nF_0603" H 6800 3665 50  0001 L TNN
+F 2 "PASSIVES:CAP_0603" H 6800 4400 50  0001 L TNN
+F 3 "https://www.farnell.com/datasheets/1958469.pdf" H 6800 4500 50  0001 L TNN
+F 4 "885012206020" H 6800 4200 50  0001 L TNN "ValueSymbol"
+F 5 "732-7939-1-ND" H 6800 3800 50  0001 L TNN "DigikeyNumber"
+F 6 "710-885012206020" H 6800 3900 50  0001 L TNN "MouserNumber"
+F 7 "2495168" H 6800 4000 50  0001 L TNN "FarnellNumber"
+F 8 "100nF" V 7925 2825 39  0000 L CNN "resistance"
+	1    7800 2800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7500 2700 7500 2600
+Connection ~ 7500 2600
+Wire Wire Line
+	7800 2300 7800 2700
+Connection ~ 7800 2300
+Wire Wire Line
+	8100 2700 8100 2000
+Wire Wire Line
+	8100 2000 8300 2000
+Wire Wire Line
+	7500 2000 8100 2000
+Connection ~ 8100 2000
+Wire Wire Line
+	7800 2300 8300 2300
+Wire Wire Line
+	7500 2600 8300 2600
+$Comp
+L kicad_joelvonrotz_power:GND #PWR?
+U 1 1 5C39E91B
+P 8100 3000
+AR Path="/5C39E91B" Ref="#PWR?"  Part="1" 
+AR Path="/5C22DAA4/5C39E91B" Ref="#PWR0117"  Part="1" 
+F 0 "#PWR0117" H 8300 3100 50  0001 C CNN
+F 1 "GND" H 8096 2825 50  0000 C CNN
+F 2 "" H 8100 3200 50  0001 C CNN
+F 3 "" H 8100 3200 50  0001 C CNN
+	1    8100 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_power:GND #PWR?
+U 1 1 5C3A18B0
+P 7800 3000
+AR Path="/5C3A18B0" Ref="#PWR?"  Part="1" 
+AR Path="/5C22DAA4/5C3A18B0" Ref="#PWR0118"  Part="1" 
+F 0 "#PWR0118" H 8000 3100 50  0001 C CNN
+F 1 "GND" H 7796 2825 50  0000 C CNN
+F 2 "" H 7800 3200 50  0001 C CNN
+F 3 "" H 7800 3200 50  0001 C CNN
+	1    7800 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L kicad_joelvonrotz_power:GND #PWR?
+U 1 1 5C3A45A4
+P 7500 3000
+AR Path="/5C3A45A4" Ref="#PWR?"  Part="1" 
+AR Path="/5C22DAA4/5C3A45A4" Ref="#PWR0119"  Part="1" 
+F 0 "#PWR0119" H 7700 3100 50  0001 C CNN
+F 1 "GND" H 7496 2825 50  0000 C CNN
+F 2 "" H 7500 3200 50  0001 C CNN
+F 3 "" H 7500 3200 50  0001 C CNN
+	1    7500 3000
+	1    0    0    -1  
+$EndComp
+Text HLabel 5200 1400 2    50   Input ~ 10
+PROG_MOSI
+Text HLabel 5200 1500 2    50   Input ~ 10
+PROG_MISO
+Text HLabel 5200 1600 2    50   Input ~ 10
+PROG_SCK
+Text HLabel 1400 1700 0    50   Input ~ 10
+MCU_RESET
+Text HLabel 3300 6000 2    50   Input ~ 10
+MCU_SensorSpeed
+Text HLabel 9900 5100 2    50   Input ~ 10
+MAGNET
+Text Label 1500 1900 0    50   ~ 0
+RX
+Text Label 1500 2000 0    50   ~ 0
+TX
+Text HLabel 1400 2000 0    50   Input ~ 10
+MCU_TX
+Wire Wire Line
+	1900 2000 1400 2000
+Wire Wire Line
+	1900 1900 1400 1900
+Text HLabel 1400 1900 0    50   Input ~ 10
+MCU_RX
+$Comp
+L kicad_joelvonrotz_connector:SL_100mil_2x3p J1
+U 1 1 5C3E6EB7
+P 2100 5000
+F 0 "J1" H 2250 5165 50  0000 C CNN
+F 1 "SL_100mil_2x3p" H 2250 5074 50  0000 C CNN
+F 2 "MECHANICAL:SL_100MIL_2x3p" H 1100 6100 50  0001 L TNN
+F 3 "https://www.farnell.com/datasheets/1992055.pdf" H 1100 6700 50  0001 L TNN
+F 4 "TSW-103-07-F-D" H 1100 6200 50  0001 L TNN "ValueSymbol"
+F 5 "SAM10846-ND" H 1100 6500 50  0001 L TNN "DigikeyNumber"
+F 6 "200-TSW10307FD" H 1100 6400 50  0001 L TNN "MouserNumber"
+F 7 "2667449" H 1100 6600 50  0001 L TNN "FarnellNumber"
+	1    2100 5000
+	1    0    0    -1  
+$EndComp
+Text Label 5200 1700 2    50   ~ 0
+OSC_IN
+Text Label 5200 1600 2    50   ~ 0
+PROG_SCK
+Text Label 5200 1500 2    50   ~ 0
+PROG_MISO
+Text Label 5200 1400 2    50   ~ 0
+PROG_MOSI
+$EndSCHEMATC
