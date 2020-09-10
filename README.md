@@ -4,3 +4,5 @@ Additionally the mechanical plans, KiCAD files, used for the PCB, and the Latex 
 
 # Geregelte Wirbelstrombremse
 Dieses *Repository* beinhaltet alle verwendeten Informationen bezüglich der Maturaarbeit *Geregelte Wirbelstrombremse*. Alle mechanischen Pläne, Leiterplattendaten und das Latex-Projekt selber wird hier abgespeichert.
+
+:warning: This is my very first Latex-project, so expect a lot of workarounds :warning:
